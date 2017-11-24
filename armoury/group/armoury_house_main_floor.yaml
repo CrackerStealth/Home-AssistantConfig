@@ -1,0 +1,43 @@
+house_main_floor_living_room:
+  name: Living Room
+  entities:
+    - binary_sensor.28426a
+    - light.1b52c9
+    - light.19c60d
+    - light.19cd69
+    - light.19c7a9
+house_main_floor_hallway:
+  name: Hallway
+  entities: 
+    - sensor.ELINA_Thermostat_temperature
+    - sensor.ELINA_Thermostat_humidity
+    - sensor.ELINA_Thermostat_operation_mode
+    - sensor.ELINA_Thermostat_hvac_state
+house_main_floor_bedroom_01:
+  name: Master Bedroom
+  entities:
+    - input_select.bedroom_01_hvac_mode
+    - input_number.bedroom_01_target_temperature
+    - sensor.Master_Bedroom_Temperature
+    - light.Bedside_Left
+    - light.Bedside_Right
+house_main_floor_bedroom_02:
+  name: Spare Bedroom
+  entities:
+house_main_floor_bathroom:
+  name: Bathroom
+  entities:
+house_main_floor_dining:
+  name: Dining Room
+  entities:
+house_main_floor_kitchen:
+  name: Kitchen
+  entities:
+    - light.Kitchen_Cabinet
+house_main_floor_space:
+  name: Space
+  entities:
+    - binary_sensor.284296
+house_main_floor_laundry_room:
+  name: Laundry Room
+  entities:

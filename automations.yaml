@@ -1,0 +1,107 @@
+- id: alert_garage_door_closed
+  alias: 'Alert: Garage Door Closed'
+  trigger:
+  - platform: state
+    entity_id: sensor.garage_main_door
+    from: open
+    to: closed
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Garage door was closed.
+      title: 'The Armoury: Garage'
+      data:
+        priority: 0
+- id: alert_garage_door_opened
+  alias: 'Alert: Garage Door Opened'
+  trigger:
+  - platform: state
+    entity_id: sensor.garage_main_door
+    from: closed
+    to: open
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Garage door was opened.
+      title: 'The Armoury: Garage'
+      data:
+        priority: 0
+- id: alert_home_temperature_too_low
+  alias: 'Alert: Home Temperature Too Low'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ELINA_Thermostat_temperature
+    below: 16
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Home temperature dropped below 16 degrees celcius.
+      title: 'The Armoury: House'
+      data:
+        priority: 0
+- id: alert_home_temperature_too_high
+  alias: 'Alert: Home Temperature Too High'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ELINA_Thermostat_temperature
+    above: 24
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Home temperature dropped below 16 degrees celcius.
+      title: 'The Armoury: House'
+      data:
+        priority: 1
+- id: alert_master_bedroom_high_heat
+  alias: 'Alert: High Heat In Master Bedroom'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.Master_Bedroom_Temperature
+    above: 24
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Master bedroom has high heat!
+      title: 'The Armoury: House'
+      data:
+        priority: 1
+- id: react_master_bedroom_turn_heat_off
+  alias: 'React: Turn Heat Off In Master Bedroom'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.Master_Bedroom_Temperature
+    above: 21
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Turning master bedroom heat off.
+      title: 'The Armoury: House'
+      data:
+        priority: -1
+  condition:
+  - condition: state
+    entity_id: sensor.ELINA_Thermostat_operation_mode
+    state: heat
+  - condition: state
+    entity_id: input_select.bedroom_01_heat_mode
+    state: Auto
+- id: react_master_bedroom_turn_heat_on
+  alias: 'React: Turn Heat On In Master Bedroom'
+  trigger:
+  - below: 19
+    entity_id: sensor.Master_Bedroom_Temperature
+    platform: numeric_state
+  action:
+  - data:
+      data:
+        priority: -1
+      message: Turning master bedroom heat off.
+      title: 'The Armoury: House'
+    service: notify.armoury_pushover
+  condition:
+  - condition: state
+    entity_id: sensor.ELINA_Thermostat_operation_mode
+    state: heat
+  - condition: state
+    entity_id: input_select.bedroom_01_heat_mode
+    state: Auto

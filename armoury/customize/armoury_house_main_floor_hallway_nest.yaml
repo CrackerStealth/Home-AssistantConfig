@@ -1,0 +1,11 @@
+sensor.ELINA_Thermostat_temperature:
+  friendly_name: Nest Temperature
+sensor.ELINA_Thermostat_humidity:
+  friendly_name: Nest Humidity
+  icon: mdi:water-percent
+sensor.ELINA_Thermostat_operation_mode:
+  friendly_name: Nest Mode
+  icon: mdi:settings-box
+sensor.ELINA_Thermostat_hvac_state:
+  friendly_name: Nest HVAC State
+  icon: mdi:settings-box

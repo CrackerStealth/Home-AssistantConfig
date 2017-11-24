@@ -1,0 +1,37 @@
+default_view:
+  view: yes
+  name: House (Main)
+  entities:
+    - group.house_main_floor_living_room
+    - group.house_main_floor_hallway
+    - group.house_main_floor_bedroom_01
+    - group.house_main_floor_bedroom_02
+    - group.house_main_floor_bathroom
+    - group.house_main_floor_dining
+    - group.house_main_floor_kitchen
+    - group.house_main_floor_space
+    - group.house_main_floor_laundry_room
+house_basement:
+  view: yes
+  name: House (Basement)
+  entities:
+    - group.house_basement_common_room
+garage:
+  view: yes
+  name: Garage
+  entities: 
+    - sensor.garage_main_door
+outside:
+  view: yes
+  name: Outside
+  entities: 
+    - group.outside_front_yard
+    - group.outside_driveway
+    - group.outside_back_yard
+    - group.outside_weather
+status:
+  view: yes
+  name: Status
+  entities: 
+    - group.status_nas
+    - group.status_pihole

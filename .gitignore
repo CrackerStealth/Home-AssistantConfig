@@ -1,0 +1,12 @@
+*
+!*.yaml
+!armoury/
+!armoury/customize
+!armoury/group
+!armoury/input
+!armoury/input/number
+!armoury/input/select
+!armoury/sensor
+!.gitignore
+secrets.yaml
+known_devices.yaml

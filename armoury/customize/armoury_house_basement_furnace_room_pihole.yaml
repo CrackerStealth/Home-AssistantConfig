@@ -1,0 +1,10 @@
+sensor.PiHole_Ads_Blocked_Today:
+  friendly_name: Ads Blocked Today
+sensor.PiHole_DNS_Queries_Today:
+  friendly_name: DNS Queries Today
+sensor.PiHole_DNS_Queries_Forwarded:
+  friendly_name: DNS Queries Forwarded
+sensor.PiHole_DNS_Queries_Cached:
+  friendly_name: DNS Queries Cached
+sensor.PiHole_Domains_Blocked:
+  friendly_name: Domains Blocked

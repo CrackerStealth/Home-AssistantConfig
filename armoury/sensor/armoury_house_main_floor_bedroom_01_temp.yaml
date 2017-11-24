@@ -1,0 +1,5 @@
+platform: random
+name: Master Bedroom Temperature
+minimum: 19
+maximum: 21
+unit_of_measurement: °C

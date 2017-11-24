@@ -1,0 +1,7 @@
+bedroom_01_target_temperature:
+  name: Target Temperature
+  icon: mdi:thermometer-lines
+  initial: 20
+  min: 16
+  max: 26
+  step: 1
