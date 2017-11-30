@@ -1,0 +1,15 @@
+switch.Aeotec_ZW096_Smart_Switch_6_Switch:
+  friendly_name: Fireplace
+  icon: mdi:fire
+sensor.Aeotec_ZW096_Smart_Switch_6_Current:
+  friendly_name: Current
+  icon: mdi:power-socket-us
+sensor.Aeotec_ZW096_Smart_Switch_6_Energy:
+  friendly_name: Energy
+  icon: mdi:power-socket-us
+sensor.Aeotec_ZW096_Smart_Switch_6_Power:
+  friendly_name: Power
+  icon: mdi:power-socket-us
+sensor.Aeotec_ZW096_Smart_Switch_6_Voltage:
+  friendly_name: Voltage
+  icon: mdi:power-socket-us

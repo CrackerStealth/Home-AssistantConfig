@@ -1,0 +1,4 @@
+name: garage_temperature
+platform: command_line
+unit_of_measurement: °C
+command: !secret rest_endpoint_garage_temperature

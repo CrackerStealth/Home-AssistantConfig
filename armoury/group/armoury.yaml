@@ -20,6 +20,7 @@ garage:
   view: yes
   name: Garage
   entities: 
+    - sensor.garage_temperature
     - sensor.garage_main_door
 outside:
   view: yes
@@ -35,3 +36,8 @@ status:
   entities: 
     - group.status_nas
     - group.status_pihole
+power:
+  view: yes
+  name: Power Usage
+  entities:
+    - group.power_bedroom_01_fireplace
