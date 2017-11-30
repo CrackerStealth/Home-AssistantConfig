@@ -16,9 +16,10 @@ house_main_floor_hallway:
 house_main_floor_bedroom_01:
   name: Master Bedroom
   entities:
+    - sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+    - switch.Aeotec_ZW096_Smart_Switch_6_Switch
     - input_select.bedroom_01_hvac_mode
     - input_number.bedroom_01_target_temperature
-    - sensor.Master_Bedroom_Temperature
     - light.Bedside_Left
     - light.Bedside_Right
 house_main_floor_bedroom_02:

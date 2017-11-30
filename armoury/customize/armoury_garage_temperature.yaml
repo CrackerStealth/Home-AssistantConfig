@@ -1,0 +1,2 @@
+sensor.garage_temperature:
+  friendly_name: Temperature

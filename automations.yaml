@@ -31,7 +31,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.ELINA_Thermostat_temperature
-    below: 16
+    below: !secret home_low_heat
   action:
   - service: notify.armoury_pushover
     data:
@@ -44,11 +44,11 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.ELINA_Thermostat_temperature
-    above: 24
+    above: !secret home_high_heat
   action:
   - service: notify.armoury_pushover
     data:
-      message: Home temperature dropped below 16 degrees celcius.
+      message: Home temperature is above 24 degrees celcius.
       title: 'The Armoury: House'
       data:
         priority: 1
@@ -57,7 +57,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.Master_Bedroom_Temperature
-    above: 24
+    above: !secret home_high_heat
   action:
   - service: notify.armoury_pushover
     data:
@@ -65,43 +65,105 @@
       title: 'The Armoury: House'
       data:
         priority: 1
+- id: alert_master_bedroom_fireplace_turned_on
+  alias: 'Alert: Master Bedroom Fireplace Turned On'
+  trigger:
+  - platform: state
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    from: 'off'
+    to: 'on'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Master bedroom fireplace turned on.
+      title: 'The Armoury: House'
+      data:
+        priority: -2
+- id: alert_master_bedroom_fireplace_turned_off
+  alias: 'Alert: Master Bedroom Fireplace Turned Off'
+  trigger:
+  - platform: state
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    from: 'on'
+    to: 'off'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Master bedroom fireplace turned off.
+      title: 'The Armoury: House'
+      data:
+        priority: -2
 - id: react_master_bedroom_turn_heat_off
   alias: 'React: Turn Heat Off In Master Bedroom'
   trigger:
   - platform: numeric_state
-    entity_id: sensor.Master_Bedroom_Temperature
-    above: 21
+    entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+    value_template: '{{ float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state) - float(states.input_number.bedroom_01_target_temperature.state) }}'
+    above: 1
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Turning master bedroom heat off.
-      title: 'The Armoury: House'
-      data:
-        priority: -1
+  - service: switch.turn_off
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
   condition:
   - condition: state
-    entity_id: sensor.ELINA_Thermostat_operation_mode
-    state: heat
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    state: 'on'
   - condition: state
-    entity_id: input_select.bedroom_01_heat_mode
+    entity_id: input_select.bedroom_01_hvac_mode
     state: Auto
 - id: react_master_bedroom_turn_heat_on
   alias: 'React: Turn Heat On In Master Bedroom'
   trigger:
-  - below: 19
-    entity_id: sensor.Master_Bedroom_Temperature
-    platform: numeric_state
+  - platform: numeric_state
+    entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+    value_template: '{{ float(states.input_number.bedroom_01_target_temperature.state) - float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state) }}'
+    above: 1
   action:
-  - data:
-      data:
-        priority: -1
-      message: Turning master bedroom heat off.
-      title: 'The Armoury: House'
-    service: notify.armoury_pushover
+  - service: switch.turn_on
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
   condition:
   - condition: state
     entity_id: sensor.ELINA_Thermostat_operation_mode
     state: heat
   - condition: state
-    entity_id: input_select.bedroom_01_heat_mode
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    state: 'off'
+  - condition: state
+    entity_id: input_select.bedroom_01_hvac_mode
     state: Auto
+- id: react_master_bedroom_turn_heat_on_manual
+  alias: 'React: Turn Heat On In Master Bedroom (Manual)'
+  trigger:
+  - entity_id: input_select.bedroom_01_hvac_mode
+    from: Auto
+    platform: state
+    to: Heat
+  - entity_id: input_select.bedroom_01_hvac_mode
+    from: Cool
+    platform: state
+    to: Heat
+  - entity_id: input_select.bedroom_01_hvac_mode
+    from: 'Off'
+    platform: state
+    to: Heat
+  action:
+  - entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    service: switch.turn_on
+- id: react_master_bedroom_turn_heat_off_manual
+  alias: 'React: Turn Heat Off In Master Bedroom (Manual)'
+  trigger:
+  - entity_id: input_select.bedroom_01_hvac_mode
+    from: Heat
+    platform: state
+    to: Auto
+  - entity_id: input_select.bedroom_01_hvac_mode
+    from: Heat
+    platform: state
+    to: Cool
+  - platform: state
+    entity_id: input_select.bedroom_01_hvac_mode
+    from: Heat
+    to: 'Off'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+ 

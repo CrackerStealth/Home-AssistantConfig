@@ -1,0 +1,7 @@
+power_bedroom_01_fireplace:
+  name: Bedroom Fireplace
+  entities:
+    - sensor.Aeotec_ZW096_Smart_Switch_6_Current
+    - sensor.Aeotec_ZW096_Smart_Switch_6_Energy
+    - sensor.Aeotec_ZW096_Smart_Switch_6_Power
+    - sensor.Aeotec_ZW096_Smart_Switch_6_Voltage
