@@ -53,9 +53,12 @@ map:
 tts:
   - platform: google
 
-# Enable Insteon
-insteon_plm:
-  port: /dev/ttyUSB0
+# Enable MQTT
+mqtt:
+  broker: !secret mqtt_host
+  port: !secret mqtt_port
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
 
 # Enable Pushover
 notify:
@@ -68,6 +71,10 @@ notify:
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret 
+
+# Enable Trackers
+device_tracker:
+  - platform: owntracks
 
 # Enable OpenWeatherMap
 weather:

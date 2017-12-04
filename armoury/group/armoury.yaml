@@ -26,16 +26,18 @@ outside:
   view: yes
   name: Outside
   entities: 
+    - weather.openweathermap
     - group.outside_front_yard
     - group.outside_driveway
     - group.outside_back_yard
-    - group.outside_weather
 status:
   view: yes
   name: Status
   entities: 
+    - group.status_people
     - group.status_nas
     - group.status_pihole
+    - group.status_battery_levels
 power:
   view: yes
   name: Power Usage

@@ -1,20 +1,9 @@
 outside_front_yard:
   name: Front Yard
   entities:
-    - light.29da28
 outside_driveway:
   name: Driveway
   entities:
 outside_back_yard:
   name: Back Yard
   entities: 
-outside_weather:
-  name: Weather
-  entities:
-    - sensor.OWM_Temperature
-    - sensor.OWM_Humidity
-    - sensor.OWM_Pressure
-    - sensor.OWM_Wind_bearing
-    - sensor.OWM_Wind_speed
-    - sensor.OWM_Rain
-    - sensor.OWM_Snow

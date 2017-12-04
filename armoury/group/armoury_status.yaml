@@ -1,3 +1,7 @@
+status_people:
+  name: People
+  entities:
+    - device_tracker.matsumoto_matsumoto
 status_nas:
   name: Network Attached Storage
   entities: 
@@ -17,3 +21,9 @@ status_pihole:
     - sensor.PiHole_DNS_Queries_Forwarded
     - sensor.PiHole_DNS_Queries_Cached
     - sensor.PiHole_Domains_Blocked
+status_battery_levels:
+  name: "Battery Levels"
+  entities:
+    - sensor.living_room_lock_battery
+    - sensor.space_lock_battery
+    - sensor.bedroom_01_multisensor_battery

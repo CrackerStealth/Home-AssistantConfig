@@ -1,0 +1,4 @@
+lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked:
+  friendly_name: Front Door Lock
+sensor.living_room_lock_battery:
+  icon: mdi:battery

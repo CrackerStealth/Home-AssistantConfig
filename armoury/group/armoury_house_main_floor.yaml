@@ -1,11 +1,7 @@
 house_main_floor_living_room:
   name: Living Room
   entities:
-    - binary_sensor.28426a
-    - light.1b52c9
-    - light.19c60d
-    - light.19cd69
-    - light.19c7a9
+    - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
 house_main_floor_hallway:
   name: Hallway
   entities: 
@@ -28,17 +24,20 @@ house_main_floor_bedroom_02:
 house_main_floor_bathroom:
   name: Bathroom
   entities:
+    - media_player.Armoury_Bathroom
 house_main_floor_dining:
   name: Dining Room
   entities:
+    - media_player.Armoury_Dining_Room
 house_main_floor_kitchen:
   name: Kitchen
   entities:
     - light.Kitchen_Cabinet
+    - media_player.Armoury_Kitchen
 house_main_floor_space:
   name: Space
   entities:
-    - binary_sensor.284296
+    - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
 house_main_floor_laundry_room:
   name: Laundry Room
   entities:
