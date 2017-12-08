@@ -2,6 +2,7 @@ default_view:
   view: yes
   name: House (Main)
   entities:
+    - alarm_control_panel.Armoury_Alarm_System
     - group.house_main_floor_living_room
     - group.house_main_floor_hallway
     - group.house_main_floor_bedroom_01
@@ -15,6 +16,7 @@ house_basement:
   view: yes
   name: House (Basement)
   entities:
+    - alarm_control_panel.Armoury_Alarm_System
     - group.house_basement_common_room
 garage:
   view: yes
@@ -22,10 +24,12 @@ garage:
   entities: 
     - sensor.garage_temperature
     - sensor.garage_main_door
+    - group.garage_garage
 outside:
   view: yes
   name: Outside
   entities: 
+    - sun.sun
     - weather.openweathermap
     - group.outside_front_yard
     - group.outside_driveway

@@ -1,0 +1,4 @@
+garage_garage:
+  name: Garage
+  entities:
+    - script.control_garage_door

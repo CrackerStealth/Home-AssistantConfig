@@ -1,4 +1,6 @@
 sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature:
   friendly_name: Temperature
+  google_assistant: true
+  google_assistant_name: Temperature
 sensor.bedroom_01_multisensor_battery:
   icon: mdi:battery

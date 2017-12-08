@@ -1,0 +1,1 @@
+open_close_garage_door: !secret rest_endpoint_garage_control

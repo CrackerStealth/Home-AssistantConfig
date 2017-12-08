@@ -1,4 +1,14 @@
 lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2:
   friendly_name: Side Door Lock
+  google_assistant: true
+  google_assistant_name: Side Door
 sensor.space_lock_battery:
   icon: mdi:battery
+script.lock_side_door:
+  friendly_name: Lock Side Door
+  google_assistant: true
+  google_assistant_name: Lock Side Door
+script.unlock_side_door:
+  friendly_name: Unlock Side Door
+  google_assistant: true
+  google_assistant_name: Unlock Side Door
