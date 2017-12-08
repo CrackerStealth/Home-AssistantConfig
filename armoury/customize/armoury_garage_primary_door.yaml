@@ -1,2 +1,6 @@
 sensor.garage_main_door:
   friendly_name: Garage Door
+script.control_garage_door:
+  friendly_name: Open/Close Garage Door
+  google_assistant: true
+  google_assistant_name: Garage Door
