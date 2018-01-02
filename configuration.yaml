@@ -35,10 +35,10 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
 
 # Enables support for tracking state changes over time
 history:
@@ -79,10 +79,20 @@ notify:
     api_key: !secret pushover_api_key
     user_key: !secret pushover_user_key
 
+# Enable Chromecast
+media_player:
+  - platform: cast
+
 # Enable Nest
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret 
+
+# Enable Philips Hue
+hue:
+  bridges:
+    - host: !secret philips_hue_ip
+      filename: phue.conf
 
 # Enable Trackers
 device_tracker:

@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  space_side_door_battery:
+    friendly_name: 'Side Door'
+    value_template: '{{ states.zwave.aeotec_zw112_door_window_sensor_6_2.attributes.battery_level }}'
+    unit_of_measurement: '%'

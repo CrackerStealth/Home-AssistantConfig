@@ -18,6 +18,7 @@ house_basement:
   entities:
     - alarm_control_panel.Armoury_Alarm_System
     - group.house_basement_common_room
+    - group.house_basement_office
 garage:
   view: yes
   name: Garage
@@ -47,3 +48,4 @@ power:
   name: Power Usage
   entities:
     - group.power_bedroom_01_fireplace
+    - group.power_living_room_lamp_01
