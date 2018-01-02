@@ -62,6 +62,34 @@
       title: 'The Armoury: House'
       data:
         priority: -1
+- id: alert_front_door_opened
+  alias: 'Alert: Front Door Opened'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
+    from: 'Off'
+    to: 'On'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Front door was opened.
+      title: 'The Armoury: House'
+      data:
+        priority: 0
+- id: alert_side_door_opened
+  alias: 'Alert: Side Door Opened'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
+    from: 'Off'
+    to: 'On'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Side door was opened.
+      title: 'The Armoury: House'
+      data:
+        priority: 0
 - id: alert_master_bedroom_high_heat
   alias: 'Alert: High Heat In Master Bedroom'
   trigger:
@@ -211,3 +239,98 @@
   action:
   - service: switch.turn_off
     entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+- id: alarm_away_triggers
+  alias: 'Alarm: Triggers When Set to Away'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.armoury_alarm_system
+    state: armed_away
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.armoury_alarm_system
+- id: alarm_home_triggers
+  alias: 'Alarm: Triggers When Set to Home'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.armoury_alarm_system
+    state: armed_home
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.armoury_alarm_system
+- id: alarm_night_triggers
+  alias: 'Alarm: Triggers When Set to Night'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.armoury_alarm_system
+    state: armed_night
+  action:
+  - service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.armoury_alarm_system
+- id: alarm_disarm_keypad_used
+  alias: 'Alarm: Disarm When Keypad Used'
+  trigger:
+  - platform: state
+    entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type
+    to: '19'
+  - platform: state
+    entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type_2
+    to: '19'
+  action:
+  - service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.armoury_alarm_system
+- id: alarm_triggered
+  alias: 'Alarm: Perform Actions When Triggered'
+  trigger:
+  - platform: state
+    entity_id: alarm_control_panel.armoury_alarm_system
+    to: 'triggered'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Alarm System Has Been Triggered!
+      title: 'The Armoury: Home'
+      data:
+        priority: 1
+- id: react_turn_couch_light_on
+  alias: 'React: Turn Couch Light On'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+      scene_id: 1
+      scene_data: 3
+  action:
+  - service: light.turn_on
+    entity_id: light.aeotec_zw099_smart_dimmer_6_level
+    data:
+      brightness: 255
+- id: react_turn_couch_light_off
+  alias: 'React: Turn Couch Light Off'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+      scene_id: 2
+      scene_data: 3
+  action:
+  - service: light.turn_on
+    entity_id: light.aeotec_zw099_smart_dimmer_6_level
+    data:
+      brightness: 255

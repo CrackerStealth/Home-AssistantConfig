@@ -1,6 +1,6 @@
 platform: template
 sensors:
   space_lock_battery:
-    friendly_name: 'Front Door Lock'
+    friendly_name: 'Side Door Lock'
     value_template: '{{ states.zwave.assa_abloy_yale_push_button_deadbolt_yrd210_2.attributes.battery_level }}'
     unit_of_measurement: '%'

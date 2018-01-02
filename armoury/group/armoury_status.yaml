@@ -24,6 +24,8 @@ status_pihole:
 status_battery_levels:
   name: "Battery Levels"
   entities:
+    - sensor.living_room_front_door_battery
     - sensor.living_room_lock_battery
+    - sensor.space_side_door_battery
     - sensor.space_lock_battery
     - sensor.bedroom_01_multisensor_battery

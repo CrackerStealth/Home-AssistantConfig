@@ -2,3 +2,7 @@ house_basement_common_room:
   name: Weight Room
   entities:
     - media_player.Armoury_Exercise_Room
+house_basement_office:
+  name: Office
+  entities:
+    - light.homeseer_hswd100_wall_dimmer_level

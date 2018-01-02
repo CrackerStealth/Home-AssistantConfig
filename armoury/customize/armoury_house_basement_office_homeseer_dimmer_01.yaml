@@ -1,0 +1,4 @@
+light.homeseer_hswd100_wall_dimmer_level:
+  friendly_name: Main Light
+  google_assistant: true
+  google_assistant_name: Office Light

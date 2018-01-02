@@ -1,7 +1,10 @@
 house_main_floor_living_room:
   name: Living Room
   entities:
+    - binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
     - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+    - light.homeseer_hswd100_wall_dimmer_level_2
+    - light.aeotec_zw099_smart_dimmer_6_level
 house_main_floor_hallway:
   name: Hallway
   entities: 
@@ -37,6 +40,7 @@ house_main_floor_kitchen:
 house_main_floor_space:
   name: Space
   entities:
+    - binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
     - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
 house_main_floor_laundry_room:
   name: Laundry Room
