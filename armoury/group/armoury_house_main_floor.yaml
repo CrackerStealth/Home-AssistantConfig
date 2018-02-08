@@ -1,5 +1,6 @@
 house_main_floor_living_room:
   name: Living Room
+  control: hidden
   entities:
     - binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
     - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
@@ -7,6 +8,7 @@ house_main_floor_living_room:
     - light.aeotec_zw099_smart_dimmer_6_level
 house_main_floor_hallway:
   name: Hallway
+  control: hidden
   entities: 
     - sensor.ELINA_Thermostat_temperature
     - sensor.ELINA_Thermostat_humidity
@@ -14,6 +16,7 @@ house_main_floor_hallway:
     - sensor.ELINA_Thermostat_hvac_state
 house_main_floor_bedroom_01:
   name: Master Bedroom
+  control: hidden
   entities:
     - sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
     - switch.Aeotec_ZW096_Smart_Switch_6_Switch
@@ -23,25 +26,31 @@ house_main_floor_bedroom_01:
     - light.Bedside_Right
 house_main_floor_bedroom_02:
   name: Spare Bedroom
+  control: hidden
   entities:
 house_main_floor_bathroom:
   name: Bathroom
+  control: hidden
   entities:
     - media_player.Armoury_Bathroom
 house_main_floor_dining:
   name: Dining Room
+  control: hidden
   entities:
     - media_player.Armoury_Dining_Room
 house_main_floor_kitchen:
   name: Kitchen
+  control: hidden
   entities:
     - light.Kitchen_Cabinet
     - media_player.Armoury_Kitchen
 house_main_floor_space:
   name: Space
+  control: hidden
   entities:
     - binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
     - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
 house_main_floor_laundry_room:
   name: Laundry Room
+  control: hidden
   entities:

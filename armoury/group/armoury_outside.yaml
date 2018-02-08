@@ -1,9 +1,12 @@
 outside_front_yard:
   name: Front Yard
+  control: hidden
   entities:
 outside_driveway:
   name: Driveway
+  control: hidden
   entities:
 outside_back_yard:
   name: Back Yard
+  control: hidden
   entities: 

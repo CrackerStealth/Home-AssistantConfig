@@ -115,7 +115,8 @@ google_assistant:
   access_token: !secret google_assistant_access_token
   agent_user_id: !secret google_assistant_agent_user_id
   api_key: !secret google_assistant_api_key
-  exposed_domains:
+  entity_config: !include armoury/google_entity_config.yaml
+  exposed_domains: 
 
 alarm_control_panel: !include armoury/alarm_control_panel.yaml
 

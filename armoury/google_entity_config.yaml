@@ -1,0 +1,36 @@
+light.Aeotec_ZW099_Smart_Dimmer_6_Level:
+  expose: true
+  name: Couch Lamp
+  type: light
+light.homeseer_hswd100_wall_dimmer_level_2:
+  expose: true
+  name: Doorway Light
+  type: light
+light.homeseer_hswd100_wall_dimmer_level:
+  expose: true
+  name: Office Light
+  type: light
+switch.Aeotec_ZW096_Smart_Switch_6_Switch:
+  expose: true
+  name: Fireplace
+  type: switch
+script.control_garage_door:
+  expose: true
+  name: Garage Door
+  type: scene
+script.lock_front_door:
+  expose: true
+  name: Lock Front
+  type: scene
+script.unlock_front_door:
+  expose: false
+  name: Unlock Front
+  type: scene
+script.lock_side_door:
+  expose: true
+  name: Lock Side
+  type: scene
+script.unlock_side_door:
+  expose: false
+  name: Unlock Side
+  type: scene

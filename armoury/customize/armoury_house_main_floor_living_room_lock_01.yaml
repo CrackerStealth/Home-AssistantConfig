@@ -4,9 +4,5 @@ sensor.living_room_lock_battery:
   icon: mdi:battery
 script.lock_front_door:
   friendly_name: Lock Front Door
-  google_assistant: true
-  google_assistant_name: Lock Front
 script.unlock_front_door:
   friendly_name: Unlock Front Door
-  google_assistant: true
-  google_assistant_name: Unlock Front

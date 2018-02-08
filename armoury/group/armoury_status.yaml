@@ -1,9 +1,11 @@
 status_people:
   name: People
+  control: hidden
   entities:
     - device_tracker.matsumoto_matsumoto
 status_nas:
   name: Network Attached Storage
+  control: hidden
   entities: 
     - sensor.CPU_Load_Total
     - sensor.Memory_Usage_Real
@@ -15,6 +17,7 @@ status_nas:
     - sensor.Volume_Used_volume_1
 status_pihole:
   name: "Pi-Hole DNS Server"
+  control: hidden
   entities: 
     - sensor.PiHole_Ads_Blocked_Today
     - sensor.PiHole_DNS_Queries_Today
@@ -23,6 +26,7 @@ status_pihole:
     - sensor.PiHole_Domains_Blocked
 status_battery_levels:
   name: "Battery Levels"
+  control: hidden
   entities:
     - sensor.living_room_front_door_battery
     - sensor.living_room_lock_battery

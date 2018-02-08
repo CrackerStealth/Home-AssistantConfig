@@ -1,5 +1,6 @@
 power_bedroom_01_fireplace:
   name: Bedroom Fireplace
+  control: hidden
   entities:
     - sensor.Aeotec_ZW096_Smart_Switch_6_Current
     - sensor.Aeotec_ZW096_Smart_Switch_6_Energy
@@ -7,6 +8,7 @@ power_bedroom_01_fireplace:
     - sensor.Aeotec_ZW096_Smart_Switch_6_Voltage
 power_living_room_lamp_01:
   name: Living Room Lamp 01
+  control: hidden
   entities:
     - sensor.Aeotec_ZW099_Smart_Dimmer_6_Current
     - sensor.Aeotec_ZW099_Smart_Dimmer_6_Energy

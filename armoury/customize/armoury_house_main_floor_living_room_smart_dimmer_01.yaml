@@ -1,7 +1,5 @@
 light.Aeotec_ZW099_Smart_Dimmer_6_Level:
   friendly_name: Couch Lamp
-  google_assistant: true
-  google_assistant_name: Couch Lamp
 sensor.Aeotec_ZW099_Smart_Dimmer_6_Current:
   friendly_name: Current
   icon: mdi:power-socket-us

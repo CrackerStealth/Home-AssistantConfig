@@ -1,8 +1,6 @@
 switch.Aeotec_ZW096_Smart_Switch_6_Switch:
   friendly_name: Fireplace
   icon: mdi:fire
-  google_assistant: true
-  google_assistant_name: Fireplace
 sensor.Aeotec_ZW096_Smart_Switch_6_Current:
   friendly_name: Current
   icon: mdi:power-socket-us

@@ -1,4 +1,5 @@
 garage_garage:
   name: Garage
+  control: hidden
   entities:
     - script.control_garage_door
