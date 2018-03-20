@@ -42,6 +42,7 @@ status:
     - group.status_people
     - group.status_nas
     - group.status_pihole
+    - group.status_3d_printer
     - group.status_battery_levels
 power:
   view: yes

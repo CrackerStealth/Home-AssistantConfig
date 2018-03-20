@@ -8,5 +8,6 @@
 !armoury/input/select
 !armoury/sensor
 !.gitignore
-secrets.yaml
+entity_registry.yaml
 known_devices.yaml
+secrets.yaml
