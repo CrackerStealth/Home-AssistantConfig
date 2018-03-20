@@ -13,6 +13,8 @@ homeassistant:
   # Customization file
   customize: !include_dir_merge_named armoury/customize/
 
+hassio:
+
 # Enables the frontend
 frontend:
 
@@ -55,6 +57,10 @@ logbook:
     domains:
       - group
 
+# Enabled the recorder and keeps history for 30 days max
+recorder:
+    purge_keep_days: 30
+
 # Enables a map showing the location of tracked devices
 map:
 
@@ -94,6 +100,13 @@ hue:
     - host: !secret philips_hue_ip
       filename: phue.conf
 
+# Enable Octo-print
+octoprint:
+  host: !secret 3d_printer_controller_ip
+  api_key: !secret 3d_printer_controller_api_key
+  bed: true
+  number_of_tools: 1
+
 # Enable Trackers
 device_tracker:
   - platform: owntracks
@@ -122,6 +135,7 @@ alarm_control_panel: !include armoury/alarm_control_panel.yaml
 
 group: !include_dir_merge_named armoury/group
 sensor: !include_dir_list armoury/sensor
+binary_sensor: !include_dir_list armoury/binary_sensor
 input_number: !include_dir_merge_named armoury/input/number
 input_select: !include_dir_merge_named armoury/input/select
 

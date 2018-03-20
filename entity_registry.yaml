@@ -1,0 +1,135 @@
+climate.elina:
+  platform: nest
+  unique_id: AGbq6ZruWIgcagT4Gg79U-HG6dGDUhWP
+light.bedside_left:
+  platform: hue
+  unique_id: 00:17:88:01:02:3d:57:86-0b
+light.kitchen_cabinet:
+  platform: hue
+  unique_id: 00:17:88:01:01:1c:a8:62-0b
+light.bedside_right:
+  platform: hue
+  unique_id: 00:17:88:01:02:33:91:2b-0b
+switch.aeotec_zw096_smart_switch_6_switch:
+  platform: zwave
+  unique_id: 2-72057594076282880
+sensor.aeotec_zw096_smart_switch_6_energy:
+  platform: zwave
+  unique_id: 2-72057594076495874
+sensor.aeotec_zw096_smart_switch_6_previous_reading:
+  platform: zwave
+  unique_id: 2-72057594076495890
+sensor.aeotec_zw096_smart_switch_6_power:
+  platform: zwave
+  unique_id: 2-72057594076496002
+sensor.aeotec_zw096_smart_switch_6_voltage:
+  platform: zwave
+  unique_id: 2-72057594076496130
+sensor.aeotec_zw096_smart_switch_6_current:
+  platform: zwave
+  unique_id: 2-72057594076496194
+binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  platform: zwave
+  unique_id: 5-72057594126811186
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  platform: zwave
+  unique_id: 5-72057594126811538
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_type:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.fibaro_system_fgms001zw5_motion_sensor_alarm_level:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  platform: zwave
+  unique_id: 5-72057594127859873
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  platform: zwave
+  unique_id: 5-72057594128564225
+lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked:
+  platform: zwave
+  unique_id: 6-72057594144391168
+sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_level:
+  platform: zwave
+  unique_id: 6-72057594144636945
+lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2:
+  platform: zwave
+  unique_id: 7-72057594161168384
+sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type_2:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_level_2:
+  platform: zwave
+  unique_id: 7-72057594161414161
+light.aeotec_zw099_smart_dimmer_6_level:
+  platform: zwave
+  unique_id: 10-72057594210516993
+light.aeotec_zw099_smart_dimmer_6_level_2:
+  platform: zwave
+  unique_id: 10-144115188248444929
+sensor.aeotec_zw099_smart_dimmer_6_energy:
+  platform: zwave
+  unique_id: 10-72057594210713602
+sensor.aeotec_zw099_smart_dimmer_6_previous_reading:
+  platform: zwave
+  unique_id: 10-72057594210713618
+sensor.aeotec_zw099_smart_dimmer_6_power:
+  platform: zwave
+  unique_id: 10-72057594210713730
+sensor.aeotec_zw099_smart_dimmer_6_voltage:
+  platform: zwave
+  unique_id: 10-72057594210713858
+sensor.aeotec_zw099_smart_dimmer_6_current:
+  platform: zwave
+  unique_id: 10-72057594210713922
+light.homeseer_hswd100_wall_dimmer_level:
+  platform: zwave
+  unique_id: 11-72057594227294209
+light.homeseer_hswd100_wall_dimmer_level_2:
+  platform: zwave
+  unique_id: 12-72057594244071425
+binary_sensor.aeotec_zw112_door_window_sensor_6_sensor:
+  platform: zwave
+  unique_id: 13-72057594261012480
+binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2:
+  platform: zwave
+  unique_id: 15-72057594294566912
+sensor.aeotec_zw112_door_window_sensor_6_alarm_type:
+  platform: zwave
+  unique_id: 15-72057594295631873
+sensor.aeotec_zw112_door_window_sensor_6_alarm_level:
+  platform: zwave
+  unique_id: 15-72057594295631889
+sensor.aeotec_zw112_door_window_sensor_6_sourcenodeid:
+  platform: zwave
+  unique_id: 15-72057594295631905
+sensor.aeotec_zw112_door_window_sensor_6_access_control:
+  platform: zwave
+  unique_id: 15-72057594295632017
+media_player.armoury_exercise_room:
+  platform: cast
+  unique_id: 70564722-81c0-5d9a-bfb5-1de0545210f2
+media_player.armoury_dining_room:
+  platform: cast
+  unique_id: 2ecede5a-5efc-5d1c-6a6f-ad12904fa740
+media_player.armoury_bathroom:
+  platform: cast
+  unique_id: 304c1712-ed57-5c37-0285-9d5f48081938
+media_player.armoury_kitchen:
+  platform: cast
+  unique_id: 80016425-7e71-2833-742b-24bc08b34d35
+media_player.grahamcast:
+  platform: cast
+  unique_id: 21a0e38c-1fac-486e-dba1-c4663cef3488

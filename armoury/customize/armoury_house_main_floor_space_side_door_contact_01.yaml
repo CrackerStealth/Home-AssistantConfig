@@ -1,4 +1,4 @@
-binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2:
+binary_sensor.aeotec_zw112_door_window_sensor_6_sensor:
   friendly_name: Side Door
   icon: mdi:door
 sensor.space_side_door_battery:

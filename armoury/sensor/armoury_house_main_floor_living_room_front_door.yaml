@@ -2,5 +2,5 @@ platform: template
 sensors:
   living_room_front_door_battery:
     friendly_name: 'Front Door'
-    value_template: '{{ states.zwave.aeotec_zw112_door_window_sensor_6.attributes.battery_level }}'
+    value_template: '{{ states.zwave.aeotec_zw112_door_window_sensor_6_2.attributes.battery_level }}'
     unit_of_measurement: '%'

@@ -1,0 +1,6 @@
+platform: octoprint
+name: OctoPrint_CR10S
+monitored_conditions:
+  - Current State
+  - Temperatures
+  - Job Percentage
