@@ -1,0 +1,12 @@
+- light.Aeotec_ZW099_Smart_Dimmer_6_Level
+- light.bedside_left
+- light.bedside_right
+- light.homeseer_hswd100_wall_dimmer_level_2
+- light.homeseer_hswd100_wall_dimmer_level
+- light.kitchen_cabinet
+- switch.Aeotec_ZW096_Smart_Switch_6_Switch
+- script.control_garage_door
+- script.lock_front_door
+- script.unlock_front_door
+- script.lock_side_door
+- script.unlock_side_door

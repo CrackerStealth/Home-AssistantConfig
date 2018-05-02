@@ -1,0 +1,36 @@
+light.Aeotec_ZW099_Smart_Dimmer_6_Level:
+  name: Couch Lamp
+#  type: 'action.devices.types.LIGHT'
+light.bedside_left:
+  name: Bedside Left
+#  type: 'action.devices.types.LIGHT'
+light.bedside_right:
+  name: Bedside Right
+#  type: 'action.devices.types.LIGHT'
+light.homeseer_hswd100_wall_dimmer_level_2:
+  name: Doorway Light
+#  type: 'action.devices.types.LIGHT'
+light.homeseer_hswd100_wall_dimmer_level:
+  name: Office Light
+#  type: 'action.devices.types.LIGHT'
+light.kitchen_cabinet:
+  name: Kitchen Cabinet
+#  type: 'action.devices.types.LIGHT'
+switch.Aeotec_ZW096_Smart_Switch_6_Switch:
+  name: Fireplace
+#  type: 'action.devices.types.OUTLET'
+script.control_garage_door:
+  name: Garage Door
+#  type: 'action.devices.types.SCENE'
+script.lock_front_door:
+  name: Lock Front
+#  type: 'action.devices.types.SCENE'
+script.unlock_front_door:
+  name: Unlock Front
+#  type: 'action.devices.types.SCENE'
+script.lock_side_door:
+  name: Lock Side
+#  type: 'action.devices.types.SCENE'
+script.unlock_side_door:
+  name: Unlock Side
+#  type: 'action.devices.types.SCENE'
