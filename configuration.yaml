@@ -13,6 +13,12 @@ homeassistant:
   # Customization file
   customize: !include_dir_merge_named armoury/customize/
 
+cloud:
+  google_actions:
+    filter:
+      include_entities: !include armoury/google_assistant_list.yaml
+    entity_config: !include armoury/google_assistant_entity_config.yaml
+
 hassio:
 
 # Enables the frontend
@@ -104,8 +110,8 @@ hue:
 octoprint:
   host: !secret 3d_printer_controller_ip
   api_key: !secret 3d_printer_controller_api_key
-  bed: true
-  number_of_tools: 1
+  bed: !secret 3d_printer_controller_heated_bed
+  number_of_tools: !secret 3d_printer_controller_tools
 
 # Enable Trackers
 device_tracker:
@@ -120,16 +126,6 @@ weather:
 zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret zwave_secure_key
-
-# Enable Google Assistant
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id: !secret google_assistant_agent_user_id
-  api_key: !secret google_assistant_api_key
-  entity_config: !include armoury/google_entity_config.yaml
-  exposed_domains: 
 
 alarm_control_panel: !include armoury/alarm_control_panel.yaml
 
