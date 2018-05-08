@@ -1,3 +1,18 @@
+- id: alert_hot_tub_temperature_low
+  alias: 'Alert: Hot Tub Temperature Low'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.hottub_temperature
+    below: 50
+    for:
+      minutes: 30
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Hot tub has been below temperature for 30 minutes.
+      title: 'The Armoury: Hot Tub'
+      data:
+        priority: 1
 - id: alert_garage_door_closed
   alias: 'Alert: Garage Door Closed'
   trigger:

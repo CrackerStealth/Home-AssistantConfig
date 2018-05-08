@@ -1,6 +1,6 @@
-name: garage_temperature
+name: hottub_temperature
 platform: rest
-resource: !secret rest_endpoint_garage_temperature
+resource: !secret rest_endpoint_hottub_temperature
 method: GET
 verify_ssl: false
 value_template: '{{ value_json.sensors[0].value }}'
