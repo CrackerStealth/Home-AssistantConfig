@@ -130,8 +130,9 @@ zwave:
 alarm_control_panel: !include armoury/alarm_control_panel.yaml
 
 group: !include_dir_merge_named armoury/group
-sensor: !include_dir_list armoury/sensor
 binary_sensor: !include_dir_list armoury/binary_sensor
+sensor: !include_dir_list armoury/sensor
+switch: !include_dir_list armoury/switch
 input_number: !include_dir_merge_named armoury/input/number
 input_select: !include_dir_merge_named armoury/input/select
 
