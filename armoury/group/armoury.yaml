@@ -32,6 +32,7 @@ outside:
   entities: 
     - sun.sun
     - weather.openweathermap
+    - binary_sensor.opensprinkler_rain_sensor
     - group.outside_front_yard
     - group.outside_driveway
     - group.outside_back_yard
@@ -44,6 +45,7 @@ status:
     - group.status_pihole
     - group.status_3d_printer
     - group.status_battery_levels
+    - group.status_world
 power:
   view: yes
   name: Power Usage

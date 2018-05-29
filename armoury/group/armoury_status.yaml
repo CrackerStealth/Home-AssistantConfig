@@ -45,3 +45,8 @@ status_battery_levels:
     - sensor.space_side_door_battery
     - sensor.space_lock_battery
     - sensor.bedroom_01_multisensor_battery
+status_world:
+  name: "World View"
+  control: hidden
+  entities:
+    - sensor.cad_in_usd

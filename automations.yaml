@@ -13,6 +13,34 @@
       title: 'The Armoury: Hot Tub'
       data:
         priority: 1
+- id: alert_rain_detected
+  alias: 'Alert: Rain Detected'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.opensprinkler_rain_sensor
+    from: 'off'
+    to: 'on'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Sprinklers have been disabled because rain was detected.
+      title: 'The Armoury: Rain Detected'
+      data:
+        priority: 0
+- id: alert_rain_not_detected
+  alias: 'Alert: Rain Not Detected'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.opensprinkler_rain_sensor
+    from: 'on'
+    to: 'off'
+  action:
+  - service: notify.armoury_pushover
+    data:
+      message: Sprinklers have been enabled after rain detection has dried up.
+      title: 'The Armoury: Rain Detection Timed Out'
+      data:
+        priority: 0
 - id: alert_garage_door_closed
   alias: 'Alert: Garage Door Closed'
   trigger:
@@ -82,8 +110,8 @@
   trigger:
   - platform: state
     entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
-    from: 'Off'
-    to: 'On'
+    from: 'off'
+    to: 'on'
   action:
   - service: notify.armoury_pushover
     data:
@@ -96,8 +124,8 @@
   trigger:
   - platform: state
     entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
-    from: 'Off'
-    to: 'On'
+    from: 'off'
+    to: 'on'
   action:
   - service: notify.armoury_pushover
     data:

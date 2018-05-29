@@ -1,0 +1,17 @@
+binary_sensor.opensprinkler_rain_sensor:
+  friendly_name: Rain Sensor
+binary_sensor.opensprinkler_station_01:
+  friendly_name: Front Right Sprinklers
+  icon: mdi:water-pump
+binary_sensor.opensprinkler_station_02:
+  friendly_name: Front Left Sprinklers
+  icon: mdi:water-pump
+binary_sensor.opensprinkler_station_03:
+  friendly_name: Back Right Sprinklers
+  icon: mdi:water-pump
+binary_sensor.opensprinkler_station_04:
+  friendly_name: Back Left Sprinklers
+  icon: mdi:water-pump
+binary_sensor.opensprinkler_station_05:
+  friendly_name: Shrub Sprinklers
+  icon: mdi:water-pump
