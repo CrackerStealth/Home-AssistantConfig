@@ -45,13 +45,9 @@
   alias: 'Alert: Garage Door Closed'
   trigger:
   - platform: state
-    entity_id: sensor.garage_main_door
-    from: open
-    to: closed
-  - platform: state
-    entity_id: sensor.garage_main_door
-    from: closing
-    to: closed
+    entity_id: binary_sensor.garage_main_door
+    from: 'on'
+    to: 'off'
   action:
   - service: notify.armoury_pushover
     data:
@@ -63,13 +59,9 @@
   alias: 'Alert: Garage Door Opened'
   trigger:
   - platform: state
-    entity_id: sensor.garage_main_door
-    from: closed
-    to: open
-  - platform: state
-    entity_id: sensor.garage_main_door
-    from: opening
-    to: open
+    entity_id: binary_sensor.garage_main_door
+    from: 'off'
+    to: 'on'
   action:
   - service: notify.armoury_pushover
     data:
@@ -109,7 +101,7 @@
   alias: 'Alert: Front Door Opened'
   trigger:
   - platform: state
-    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
+    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
     from: 'off'
     to: 'on'
   action:
@@ -375,3 +367,29 @@
   action:
   - service: light.turn_off
     entity_id: light.aeotec_zw099_smart_dimmer_6_level
+- id: react_turn_chair_light_on
+  alias: 'React: Turn Chair Light On'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+      scene_id: 1
+      scene_data: 4
+  action:
+  - service: light.turn_on
+    entity_id: light.chair_lamp
+    data:
+      brightness: 255
+- id: react_turn_chair_light_off
+  alias: 'React: Turn Chair Light Off'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+      scene_id: 2
+      scene_data: 4
+  action:
+  - service: light.turn_off
+    entity_id: light.chair_lamp

@@ -1,4 +1,5 @@
-sensor.garage_main_door:
+binary_sensor.garage_main_door:
   friendly_name: Garage Door
 script.control_garage_door:
   friendly_name: Open/Close Garage Door
+  icon: mdi:remote

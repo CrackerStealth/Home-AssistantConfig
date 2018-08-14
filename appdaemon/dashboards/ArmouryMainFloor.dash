@@ -1,0 +1,153 @@
+#
+# Main arguments, all optional
+#
+title: Armoury - Main Floor
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+
+label:
+    widget_type: label
+    text: Hello World
+
+layout:
+    - front_door, front_door_lock, side_door, side_door_lock, garage_door
+    - main_clock (3x1)
+    - rain_detector, house_temperature, garage_temperature, hottub_temperature
+    - office_light, kitchen_light, chair_lamp, couch_lamp
+
+main_clock:
+    widget_type: clock
+    date_format_country: "en-CA"
+    date_format_options:
+      weekday: "long"
+      day: "numeric"
+      month: "long"
+      year: "numeric"
+
+house_temperature:
+    widget_type: sensor
+    title: House
+    title2: Temp.
+    units: "&deg;C"
+    precision: 1
+    entity: sensor.elina_thermostat_temperature
+
+garage_temperature:
+    widget_type: sensor
+    title: Garage
+    title2: Temp.
+    units: "&deg;C"
+    precision: 1
+    entity: sensor.garage_temperature
+
+hottub_temperature:
+    widget_type: sensor
+    title: Hot Tub
+    title2: Temp.
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.hottub_temperature
+
+rain_detector:
+    widget_type: binary_sensor
+    title: Rain Detection
+    title2: Sprinklers
+    icon_style_inactive: "color: yellow"
+    icon_style_active: "color: blue"
+    icon_on: mdi-weather-rainy
+    icon_off: mdi-weather-sunny
+    entity: binary_sensor.opensprinkler_rain_sensor
+    state_text: 1
+    state_map:
+      "on": Disabled
+      "off": Enabled
+      
+front_door:
+    widget_type: binary_sensor
+    title: Front Door
+    icon_on: mdi-door-open
+    icon_off: mdi-door
+    icon_style_inactive: "color: green"
+    icon_style_active: "color: red"
+    entity: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
+    state_text: 1
+    state_map:
+      "on": Open
+      "off": Closed
+
+front_door_lock:
+    widget_type: lock
+    title: Front Door
+    icon_style_inactive: "color: green"
+    icon_style_active: "color: red"
+    entity: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+    state_text: 1
+    state_map:
+      "locked": Locked
+      "unlocked": Unlocked
+
+side_door:
+    widget_type: binary_sensor
+    title: Side Door
+    icon_on: mdi-door-open
+    icon_off: mdi-door
+    icon_style_inactive: "color: green"
+    icon_style_active: "color: red"
+    entity: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
+    state_text: 1
+    state_map:
+      "on": Open
+      "off": Closed
+
+side_door_lock:
+    widget_type: lock
+    title: Side Door
+    icon_style_inactive: "color: green"
+    icon_style_active: "color: red"
+    entity: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+    state_text: 1
+    state_map:
+      "locked": Locked
+      "unlocked": Unlocked
+
+garage_door:
+    widget_type: binary_sensor
+    title: Garage Door
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
+    icon_style_inactive: "color: green"
+    icon_style_active: "color: red"
+    entity: binary_sensor.garage_main_door
+    state_text: 1
+    state_map:
+      "on": Open
+      "off": Closed
+
+office_light:
+    widget_type: light
+    title: Office
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.homeseer_hswd100_wall_dimmer_level
+
+kitchen_light:
+    widget_type: light
+    title: Kitchen
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.kitchen
+
+chair_lamp:
+    widget_type: light
+    title: Chair Lamp
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.chair_lamp
+
+couch_lamp:
+    widget_type: light
+    title: Couch Lamp
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.aeotec_zw099_smart_dimmer_6_level
