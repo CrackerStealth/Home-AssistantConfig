@@ -1,5 +1,9 @@
 *
 !*.yaml
+!*.dash
+!appdaemon/
+!appdaemon/apps
+!appdaemon/dashboards
 !armoury/
 !armoury/customize
 !armoury/group
@@ -11,3 +15,4 @@
 entity_registry.yaml
 known_devices.yaml
 secrets.yaml
+__pycache__

@@ -2,6 +2,10 @@ light.Aeotec_ZW099_Smart_Dimmer_6_Level:
   name: Couch Lamp
   room: Living Room
 #  type: 'action.devices.types.LIGHT'
+light.chair_lamp:
+  name: Chair Lamp
+  room: Living Room
+#  type: 'action.devices.types.LIGHT'
 light.bedside_left:
   name: Bedside Left
   room: Master Bedroom
@@ -13,6 +17,10 @@ light.bedside_right:
 light.homeseer_hswd100_wall_dimmer_level_2:
   name: Doorway Light
   room: Living Room
+#  type: 'action.devices.types.LIGHT'
+light.homeseer_hswd100_wall_dimmer_level_3:
+  name: Basement Lights
+  room: Basement
 #  type: 'action.devices.types.LIGHT'
 light.homeseer_hswd100_wall_dimmer_level:
   name: Office Light

@@ -92,8 +92,7 @@ notify:
     user_key: !secret pushover_user_key
 
 # Enable Chromecast
-media_player:
-  - platform: cast
+cast:
 
 # Enable Nest
 nest:

@@ -1,5 +1,7 @@
 platform: synologydsm
 host: !secret synology_nas_ip
+port: !secret synology_nas_port
+ssl: true
 username: !secret synology_nas_user
 password: !secret synology_nas_password
 monitored_conditions:
