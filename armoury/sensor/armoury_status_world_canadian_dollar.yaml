@@ -1,5 +1,0 @@
-name: cad_in_usd
-platform: scrape
-resource: !secret scrape_cad_in_usd
-select: ".uccResultAmount"
-unit_of_measurement: 'USD'

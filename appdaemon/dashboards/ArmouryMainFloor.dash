@@ -78,7 +78,7 @@ front_door:
     icon_off: mdi-door
     icon_style_inactive: "color: green"
     icon_style_active: "color: red"
-    entity: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
+    entity: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
     state_text: 1
     state_map:
       "on": Open
