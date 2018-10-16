@@ -1,5 +1,5 @@
 house_basement_common_room:
-  name: Weight Room
+  name: Basement
   control: hidden
   entities:
     - media_player.Armoury_Exercise_Room

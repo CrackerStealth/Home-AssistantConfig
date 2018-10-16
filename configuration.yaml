@@ -28,7 +28,6 @@ frontend:
 config:
 
 http:
-  api_password: !secret http_password
   base_url: !secret http_hostname
   ssl_certificate: !secret http_ssl_crt
   ssl_key: !secret http_ssl_key
@@ -132,6 +131,7 @@ group: !include_dir_merge_named armoury/group
 binary_sensor: !include_dir_list armoury/binary_sensor
 sensor: !include_dir_list armoury/sensor
 switch: !include_dir_list armoury/switch
+light: !include_dir_list armoury/light
 input_number: !include_dir_merge_named armoury/input/number
 input_select: !include_dir_merge_named armoury/input/select
 

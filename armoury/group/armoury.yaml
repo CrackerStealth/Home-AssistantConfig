@@ -25,7 +25,7 @@ garage:
   name: Garage
   entities: 
     - sensor.garage_temperature
-    - binary_sensor.garage_main_door
+    - sensor.garage_main_door_human_readable
     - group.garage_garage
 outside:
   view: yes
@@ -33,7 +33,7 @@ outside:
   entities: 
     - sun.sun
     - weather.openweathermap
-    - binary_sensor.opensprinkler_rain_sensor
+    - sensor.opensprinkler_rain_sensor_human_readable
     - group.outside_front_yard
     - group.outside_driveway
     - group.outside_back_yard
@@ -46,7 +46,6 @@ status:
     - group.status_pihole
     - group.status_3d_printer
     - group.status_battery_levels
-    - group.status_world
 power:
   view: yes
   name: Power Usage

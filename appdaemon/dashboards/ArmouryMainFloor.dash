@@ -12,9 +12,9 @@ label:
 
 layout:
     - front_door, front_door_lock, side_door, side_door_lock, garage_door
-    - main_clock (3x1)
-    - rain_detector, house_temperature, garage_temperature, hottub_temperature
-    - office_light, kitchen_light, chair_lamp, couch_lamp
+    - rain_detector, main_clock (3x1)
+    - house_temperature, master_bedroom_temperature, garage_temperature, hottub_temperature
+    - basement_light, office_light, kitchen_light, living_room_light, master_bedroom_light
 
 main_clock:
     widget_type: clock
@@ -32,6 +32,14 @@ house_temperature:
     units: "&deg;C"
     precision: 1
     entity: sensor.elina_thermostat_temperature
+
+master_bedroom_temperature:
+    widget_type: sensor
+    title: Master Bedroom
+    title2: Temp.
+    units: "&deg;C"
+    precision: 1
+    entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
 
 garage_temperature:
     widget_type: sensor
@@ -124,6 +132,13 @@ garage_door:
       "on": Open
       "off": Closed
 
+basement_light:
+    widget_type: light
+    title: Basement
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.homeseer_hswd100_wall_dimmer_level_3
+
 office_light:
     widget_type: light
     title: Office
@@ -138,16 +153,16 @@ kitchen_light:
     icon_off: mdi-lightbulb-outline
     entity: light.kitchen
 
-chair_lamp:
+living_room_light:
     widget_type: light
-    title: Chair Lamp
+    title: Living Room
     icon_on: mdi-lightbulb-on
     icon_off: mdi-lightbulb-outline
-    entity: light.chair_lamp
+    entity: light.living_room_lights
 
-couch_lamp:
+master_bedroom_light:
     widget_type: light
-    title: Couch Lamp
+    title: Master Bedroom
     icon_on: mdi-lightbulb-on
     icon_off: mdi-lightbulb-outline
-    entity: light.aeotec_zw099_smart_dimmer_6_level
+    entity: light.master_bedroom_lights

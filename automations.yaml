@@ -1,395 +1,454 @@
 - id: alert_hot_tub_temperature_low
   alias: 'Alert: Hot Tub Temperature Low'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.hottub_temperature
-    below: 50
-    for:
-      minutes: 30
+    - platform: numeric_state
+      entity_id: sensor.hottub_temperature
+      below: 50
+      for:
+        minutes: 30
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Hot tub has been below temperature for 30 minutes.
-      title: 'The Armoury: Hot Tub'
+    - service: notify.armoury_pushover
       data:
-        priority: 1
+        message: Hot tub has been below temperature for 30 minutes.
+        title: 'The Armoury: Hot Tub'
+        data:
+          priority: 1
 - id: alert_rain_detected
   alias: 'Alert: Rain Detected'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.opensprinkler_rain_sensor
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.opensprinkler_rain_sensor
+      from: 'off'
+      to: 'on'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Sprinklers have been disabled because rain was detected.
-      title: 'The Armoury: Rain Detected'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Sprinklers have been disabled because rain was detected.
+        title: 'The Armoury: Rain Detected'
+        data:
+          priority: 0
 - id: alert_rain_not_detected
   alias: 'Alert: Rain Not Detected'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.opensprinkler_rain_sensor
-    from: 'on'
-    to: 'off'
+    - platform: state
+      entity_id: binary_sensor.opensprinkler_rain_sensor
+      from: 'on'
+      to: 'off'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Sprinklers have been enabled after rain detection has dried up.
-      title: 'The Armoury: Rain Detection Timed Out'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Sprinklers have been enabled after rain detection has dried up.
+        title: 'The Armoury: Rain Detection Timed Out'
+        data:
+          priority: 0
 - id: alert_garage_door_closed
   alias: 'Alert: Garage Door Closed'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_main_door
-    from: 'on'
-    to: 'off'
+    - platform: state
+      entity_id: binary_sensor.garage_main_door
+      from: 'on'
+      to: 'off'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Garage door was closed.
-      title: 'The Armoury: Garage'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Garage door was closed.
+        title: 'The Armoury: Garage'
+        data:
+          priority: 0
 - id: alert_garage_door_opened
   alias: 'Alert: Garage Door Opened'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.garage_main_door
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.garage_main_door
+      from: 'off'
+      to: 'on'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Garage door was opened.
-      title: 'The Armoury: Garage'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Garage door was opened.
+        title: 'The Armoury: Garage'
+        data:
+          priority: 0
 - id: alert_front_door_unlocked
   alias: 'Alert: Front Door Unlocked'
   trigger:
-  - platform: state
-    entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
-    from: locked
-    to: unlocked
+    - platform: state
+      entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+      from: locked
+      to: unlocked
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Front door was unlocked.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: -1
+        message: Front door was unlocked.
+        title: 'The Armoury: House'
+        data:
+          priority: -1
 - id: alert_side_door_unlocked
   alias: 'Alert: Side Door Unlocked'
   trigger:
-  - platform: state
-    entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
-    from: locked
-    to: unlocked
+    - platform: state
+      entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+      from: locked
+      to: unlocked
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Side door was unlocked.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: -1
+        message: Side door was unlocked.
+        title: 'The Armoury: House'
+        data:
+          priority: -1
 - id: alert_front_door_opened
   alias: 'Alert: Front Door Opened'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
+      from: 'off'
+      to: 'on'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Front door was opened.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Front door was opened.
+        title: 'The Armoury: House'
+        data:
+          priority: 0
 - id: alert_side_door_opened
   alias: 'Alert: Side Door Opened'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
+      from: 'off'
+      to: 'on'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Side door was opened.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Side door was opened.
+        title: 'The Armoury: House'
+        data:
+          priority: 0
 - id: alert_master_bedroom_high_heat
   alias: 'Alert: High Heat In Master Bedroom'
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.Master_Bedroom_Temperature
-    above: 24
+    - platform: numeric_state
+      entity_id: sensor.Master_Bedroom_Temperature
+      above: 24
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Master bedroom has high heat!
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: 1
+        message: Master bedroom has high heat!
+        title: 'The Armoury: House'
+        data:
+          priority: 1
 - id: alert_master_bedroom_fireplace_turned_on
   alias: 'Alert: Master Bedroom Fireplace Turned On'
   trigger:
-  - platform: state
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      from: 'off'
+      to: 'on'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Master bedroom fireplace turned on.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: -2
+        message: Master bedroom fireplace turned on.
+        title: 'The Armoury: House'
+        data:
+          priority: -2
 - id: alert_master_bedroom_fireplace_turned_off
   alias: 'Alert: Master Bedroom Fireplace Turned Off'
   trigger:
-  - platform: state
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    from: 'on'
-    to: 'off'
+    - platform: state
+      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      from: 'on'
+      to: 'off'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Master bedroom fireplace turned off.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: -2
+        message: Master bedroom fireplace turned off.
+        title: 'The Armoury: House'
+        data:
+          priority: -2
 - id: alert_home_temperature_too_low
   alias: 'Alert: Home Temperature Too Low'
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.ELINA_Thermostat_temperature
-    below: 16
+    - platform: numeric_state
+      entity_id: sensor.ELINA_Thermostat_temperature
+      below: 16
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Home temperature dropped below 16 degrees celcius.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: 0
+        message: Home temperature dropped below 16 degrees celcius.
+        title: 'The Armoury: House'
+        data:
+          priority: 0
 - id: alert_home_temperature_too_high
   alias: 'Alert: Home Temperature Too High'
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.ELINA_Thermostat_temperature
-    above: 24
+    - platform: numeric_state
+      entity_id: sensor.ELINA_Thermostat_temperature
+      above: 24
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Home temperature is above 24 degrees celcius.
-      title: 'The Armoury: House'
+    - service: notify.armoury_pushover
       data:
-        priority: 1
+        message: Home temperature is above 24 degrees celcius.
+        title: 'The Armoury: House'
+        data:
+          priority: 1
 - id: react_master_bedroom_turn_heat_off
   alias: 'React: Turn Heat Off In Master Bedroom'
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
-    value_template: '{{ float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state)
-      - float(states.input_number.bedroom_01_target_temperature.state) }}'
-    above: 1
+    - platform: numeric_state
+      entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+      value_template: '{{ float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state) - float(states.input_number.bedroom_01_target_temperature.state) }}'
+      above: 1
   action:
-  - service: switch.turn_off
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
   condition:
-  - condition: state
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    state: 'on'
-  - condition: state
-    entity_id: input_select.bedroom_01_hvac_mode
-    state: Auto
+    - condition: state
+      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      state: 'on'
+    - condition: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      state: Auto
 - id: react_master_bedroom_turn_heat_on
   alias: 'React: Turn Heat On In Master Bedroom'
   trigger:
-  - above: 1
-    entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
-    platform: numeric_state
-    value_template: '{{ float(states.input_number.bedroom_01_target_temperature.state)
-      - float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state)
-      }}'
-  - above: '1'
-    entity_id: sensor.ELINA_Thermostat_operation_mode
-    platform: numeric_state
-    value_template: '{{ float(states.input_number.bedroom_01_target_temperature.state)
-      - float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state)
-      }}'
+    - platform: numeric_state
+      entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+      above: 1
+      value_template: '{{ float(states.input_number.bedroom_01_target_temperature.state) - float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state) }}'
+    - platform: numeric_state
+      entity_id: sensor.ELINA_Thermostat_operation_mode
+      above: '1'
+      value_template: '{{ float(states.input_number.bedroom_01_target_temperature.state) - float(states.sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature.state) }}'
   action:
-  - service: switch.turn_on
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    - service: switch.turn_on
+      data:
+        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
   condition:
-  - condition: state
-    entity_id: sensor.ELINA_Thermostat_operation_mode
-    state: heat
-  - condition: state
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    state: 'off'
-  - condition: state
-    entity_id: input_select.bedroom_01_hvac_mode
-    state: Auto
+    - condition: state
+      entity_id: sensor.ELINA_Thermostat_operation_mode
+      state: heat
+    - condition: state
+      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      state: 'off'
+    - condition: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      state: Auto
 - id: react_master_bedroom_turn_heat_on_manual
   alias: 'React: Turn Heat On In Master Bedroom (Manual)'
   trigger:
-  - entity_id: input_select.bedroom_01_hvac_mode
-    from: Auto
-    platform: state
-    to: Heat
-  - entity_id: input_select.bedroom_01_hvac_mode
-    from: Cool
-    platform: state
-    to: Heat
-  - entity_id: input_select.bedroom_01_hvac_mode
-    from: 'Off'
-    platform: state
-    to: Heat
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: Auto
+      to: Heat
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: Cool
+      to: Heat
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: 'Off'
+      to: Heat
   action:
-  - entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    service: switch.turn_on
+    - service: switch.turn_on
+      data:
+        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
 - id: react_master_bedroom_turn_heat_off_manual
   alias: 'React: Turn Heat Off In Master Bedroom (Manual)'
   trigger:
-  - entity_id: input_select.bedroom_01_hvac_mode
-    from: Heat
-    platform: state
-    to: Auto
-  - entity_id: input_select.bedroom_01_hvac_mode
-    from: Heat
-    platform: state
-    to: Cool
-  - platform: state
-    entity_id: input_select.bedroom_01_hvac_mode
-    from: Heat
-    to: 'Off'
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: Heat
+      to: Auto
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: Heat
+      to: Cool
+    - platform: state
+      entity_id: input_select.bedroom_01_hvac_mode
+      from: Heat
+      to: 'Off'
   action:
-  - service: switch.turn_off
-    entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    - service: switch.turn_off
+      data:
+        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
 - id: alarm_away_triggers
   alias: 'Alarm: Triggers When Set to Away'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      from: 'off'
+      to: 'on'
   condition:
-  - condition: state
-    entity_id: alarm_control_panel.armoury_alarm_system
-    state: armed_away
+    - condition: state
+      entity_id: alarm_control_panel.armoury_alarm_system
+      state: armed_away
   action:
-  - service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.armoury_alarm_system
+    - service: alarm_control_panel.alarm_trigger
+      data:
+        entity_id: alarm_control_panel.armoury_alarm_system
 - id: alarm_home_triggers
   alias: 'Alarm: Triggers When Set to Home'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      from: 'off'
+      to: 'on'
   condition:
-  - condition: state
-    entity_id: alarm_control_panel.armoury_alarm_system
-    state: armed_home
+    - condition: state
+      entity_id: alarm_control_panel.armoury_alarm_system
+      state: armed_home
   action:
-  - service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.armoury_alarm_system
+    - service: alarm_control_panel.alarm_trigger
+      data:
+        entity_id: alarm_control_panel.armoury_alarm_system
 - id: alarm_night_triggers
   alias: 'Alarm: Triggers When Set to Night'
   trigger:
-  - platform: state
-    entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      from: 'off'
+      to: 'on'
   condition:
-  - condition: state
-    entity_id: alarm_control_panel.armoury_alarm_system
-    state: armed_night
+    - condition: state
+      entity_id: alarm_control_panel.armoury_alarm_system
+      state: armed_night
   action:
-  - service: alarm_control_panel.alarm_trigger
-    entity_id: alarm_control_panel.armoury_alarm_system
+    - service: alarm_control_panel.alarm_trigger
+      data:
+        entity_id: alarm_control_panel.armoury_alarm_system
 - id: alarm_disarm_keypad_used
   alias: 'Alarm: Disarm When Keypad Used'
   trigger:
-  - platform: state
-    entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type
-    to: '19'
-  - platform: state
-    entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type_2
-    to: '19'
+    - platform: state
+      entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type
+      to: '19'
+    - platform: state
+      entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type_2
+      to: '19'
   action:
-  - service: alarm_control_panel.alarm_disarm
-    entity_id: alarm_control_panel.armoury_alarm_system
+    - service: alarm_control_panel.alarm_disarm
+      data:
+        entity_id: alarm_control_panel.armoury_alarm_system
 - id: alarm_triggered
   alias: 'Alarm: Perform Actions When Triggered'
   trigger:
-  - platform: state
-    entity_id: alarm_control_panel.armoury_alarm_system
-    to: 'triggered'
+    - platform: state
+      entity_id: alarm_control_panel.armoury_alarm_system
+      to: 'triggered'
   action:
-  - service: notify.armoury_pushover
-    data:
-      message: Alarm System Has Been Triggered!
-      title: 'The Armoury: Home'
+    - service: notify.armoury_pushover
       data:
-        priority: 1
+        message: Alarm System Has Been Triggered!
+        title: 'The Armoury: Home'
+        data:
+          priority: 1
 - id: react_turn_couch_light_on
   alias: 'React: Turn Couch Light On'
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
-      scene_id: 1
-      scene_data: 3
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        scene_id: 1
+        scene_data: 3
   action:
-  - service: light.turn_on
-    entity_id: light.aeotec_zw099_smart_dimmer_6_level
-    data:
-      brightness: 255
+    - service: light.turn_on
+      data:
+        entity_id: light.aeotec_zw099_smart_dimmer_6_level
+        brightness: 255
 - id: react_turn_couch_light_off
   alias: 'React: Turn Couch Light Off'
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
-      scene_id: 2
-      scene_data: 3
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        scene_id: 2
+        scene_data: 3
   action:
-  - service: light.turn_off
-    entity_id: light.aeotec_zw099_smart_dimmer_6_level
+    - service: light.turn_off
+      data:
+        entity_id: light.aeotec_zw099_smart_dimmer_6_level
 - id: react_turn_chair_light_on
   alias: 'React: Turn Chair Light On'
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
-      scene_id: 1
-      scene_data: 4
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        scene_id: 1
+        scene_data: 4
   action:
-  - service: light.turn_on
-    entity_id: light.chair_lamp
-    data:
-      brightness: 255
+    - service: light.turn_on
+      data:
+        entity_id: light.chair_lamp
+        brightness: 255
 - id: react_turn_chair_light_off
   alias: 'React: Turn Chair Light Off'
   trigger:
-    platform: event
-    event_type: zwave.scene_activated
-    event_data:
-      entity_id: zwave.homeseer_hswd100_wall_dimmer_2
-      scene_id: 2
-      scene_data: 4
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        scene_id: 2
+        scene_data: 4
   action:
-  - service: light.turn_off
-    entity_id: light.chair_lamp
+    - service: light.turn_off
+      data:
+        entity_id: light.chair_lamp
+- id: react_turn_basement_light_on
+  alias: 'React: Turn Basement Light On'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer
+        scene_id: 1
+        scene_data: 3
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.homeseer_hswd100_wall_dimmer_level_3
+        brightness: 255
+- id: react_turn_basement_light_off
+  alias: 'React: Turn Basement Light Off'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer
+        scene_id: 2
+        scene_data: 3
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.homeseer_hswd100_wall_dimmer_level_3
+- id: react_turn_office_light_on
+  alias: 'React: Turn Office Light On'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_3
+        scene_id: 1
+        scene_data: 3
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.homeseer_hswd100_wall_dimmer_level
+        brightness: 255
+- id: react_turn_office_light_off
+  alias: 'React: Turn Office Light Off'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        entity_id: zwave.homeseer_hswd100_wall_dimmer_3
+        scene_id: 2
+        scene_data: 3
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.homeseer_hswd100_wall_dimmer_level
