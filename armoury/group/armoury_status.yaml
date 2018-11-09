@@ -7,14 +7,14 @@ status_3d_printer:
   name: 3D Printer
   control: hidden
   entities:
-    - binary_sensor.octoprint_cr10s_printing
-    - binary_sensor.octoprint_cr10s_printing_error
-    - sensor.octoprint_cr10s_current_state
-    - sensor.octoprint_cr10s_job_percentage
-    - sensor.octoprint_cr10s_target_tool0_temp
-    - sensor.octoprint_cr10s_actual_tool0_temp
-    - sensor.octoprint_cr10s_target_bed_temp
-    - sensor.octoprint_cr10s_actual_bed_temp
+    - binary_sensor.sadi_printing
+    - binary_sensor.sadi_printing_error
+    - sensor.sadi_current_state
+    - sensor.sadi_job_percentage
+    - sensor.sadi_target_tool0_temp
+    - sensor.sadi_actual_tool0_temp
+    - sensor.sadi_target_bed_temp
+    - sensor.sadi_actual_bed_temp
 status_nas:
   name: Network Attached Storage
   control: hidden

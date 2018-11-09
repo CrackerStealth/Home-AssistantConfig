@@ -10,7 +10,7 @@ house_main_floor_living_room:
   control: hidden
   entities:
     - light.aeotec_zw099_smart_dimmer_6_level
-    - light.chair_lamp
+    - light.Chair_Lamp
 house_main_floor_hallway:
   name: Hallway
   control: hidden
@@ -43,6 +43,7 @@ house_main_floor_dining:
   control: hidden
   entities:
     - media_player.Armoury_Dining_Room
+    - light.Dining_Room_Lights
 house_main_floor_kitchen:
   name: Kitchen
   control: hidden

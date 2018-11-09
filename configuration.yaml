@@ -106,10 +106,11 @@ hue:
 
 # Enable Octo-print
 octoprint:
-  host: !secret 3d_printer_controller_ip
-  api_key: !secret 3d_printer_controller_api_key
-  bed: !secret 3d_printer_controller_heated_bed
-  number_of_tools: !secret 3d_printer_controller_tools
+  - host: !secret 3d_printer_controller_ip
+    name: !secret 3d_printer_controller_name
+    api_key: !secret 3d_printer_controller_api_key
+    bed: !secret 3d_printer_controller_heated_bed
+    number_of_tools: !secret 3d_printer_controller_tools
 
 # Enable Trackers
 device_tracker:
