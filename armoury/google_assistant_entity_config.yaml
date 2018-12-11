@@ -50,19 +50,11 @@ script.control_garage_door:
   name: Garage Door
   room: Garage
 #  type: 'action.devices.types.SCENE'
-script.lock_front_door:
-  name: Lock Front
+lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked:
+  name: Front Door
   room: Living Room
-#  type: 'action.devices.types.SCENE'
-script.unlock_front_door:
-  name: Unlock Front
-  room: Living Room
-#  type: 'action.devices.types.SCENE'
-script.lock_side_door:
-  name: Lock Side
+#  type: 'action.devices.types.LOCK'
+lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2:
+  name: Side Door
   room: Space
-#  type: 'action.devices.types.SCENE'
-script.unlock_side_door:
-  name: Unlock Side
-  room: Space
-#  type: 'action.devices.types.SCENE'
+#  type: 'action.devices.types.LOCK'

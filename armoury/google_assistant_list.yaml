@@ -11,7 +11,5 @@
 - light.kitchen_cabinet
 - switch.Aeotec_ZW096_Smart_Switch_6_Switch
 - script.control_garage_door
-- script.lock_front_door
-- script.unlock_front_door
-- script.lock_side_door
-- script.unlock_side_door
+- lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+- lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
