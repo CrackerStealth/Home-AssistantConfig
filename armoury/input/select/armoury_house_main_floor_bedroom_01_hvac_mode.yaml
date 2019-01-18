@@ -1,9 +1,0 @@
-bedroom_01_hvac_mode:
-  name: HVAC Mode
-  icon: mdi:settings-box
-  options:
-   - Auto
-   - Heat
-   - Cool
-   - 'Off'
-  initial: Auto

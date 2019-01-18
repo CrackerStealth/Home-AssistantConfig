@@ -129,11 +129,10 @@ alarm_control_panel: !include armoury/alarm_control_panel.yaml
 
 group: !include_dir_merge_named armoury/group
 binary_sensor: !include_dir_list armoury/binary_sensor
+climate: !include_dir_list armoury/climate
 sensor: !include_dir_list armoury/sensor
 switch: !include_dir_list armoury/switch
 light: !include_dir_list armoury/light
-input_number: !include_dir_merge_named armoury/input/number
-input_select: !include_dir_merge_named armoury/input/select
 
 shell_command: !include armoury/shell_command.yaml
 automation: !include automations.yaml

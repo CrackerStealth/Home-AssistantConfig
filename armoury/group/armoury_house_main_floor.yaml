@@ -15,18 +15,14 @@ house_main_floor_hallway:
   name: Hallway
   control: hidden
   entities: 
-    - sensor.ELINA_Thermostat_temperature
+    - climate.elina
     - sensor.ELINA_Thermostat_humidity
-    - sensor.ELINA_Thermostat_operation_mode
-    - sensor.ELINA_Thermostat_hvac_state
 house_main_floor_bedroom_01:
   name: Master Bedroom
   control: hidden
   entities:
-    - sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+    - climate.master_bedroom_heat
     - switch.Aeotec_ZW096_Smart_Switch_6_Switch
-    - input_select.bedroom_01_hvac_mode
-    - input_number.bedroom_01_target_temperature
     - light.Bedside_Left
     - light.Bedside_Right
 house_main_floor_bedroom_02:
