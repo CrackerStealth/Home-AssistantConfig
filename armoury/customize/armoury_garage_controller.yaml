@@ -1,0 +1,2 @@
+binary_sensor.garage_controller:
+  friendly_name: Garage Controller

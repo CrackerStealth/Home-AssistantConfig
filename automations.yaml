@@ -101,7 +101,7 @@
   alias: 'Alert: Front Door Opened'
   trigger:
     - platform: state
-      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_3
+      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
       from: 'off'
       to: 'on'
   action:
@@ -190,6 +190,76 @@
       data:
         message: Home temperature is above 24 degrees celcius.
         title: 'The Armoury: House'
+        data:
+          priority: 1
+- id: alert_3d_print_completed
+  alias: 'Alert: 3D Print Completed'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sadi_printing
+      from: 'on'
+      to: 'off'
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: 3D print job is now complete.
+        title: 'The Armoury: House'
+        data:
+          priority: 0
+- id: alert_3d_print_error
+  alias: 'Alert: 3D Print Error'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sadi_printing_error
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: An error occurred while a 3D print was being made!
+        title: 'The Armoury: House'
+        data:
+          priority: 1
+- id: alert_garage_controller_offline
+  alias: 'Alert: Garage Controller Offline'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_controller
+      from: 'on'
+      to: 'off'
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: The garage controller is no longer available on the network.
+        title: 'The Armoury: Garage Controller'
+        data:
+          priority: 1
+- id: alert_hottub_temp_sensor_offline
+  alias: 'Alert: Hot Tub Temeprature Service Offline'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hottub_temperature_service
+      from: 'on'
+      to: 'off'
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: The garage controller is no longer available on the network.
+        title: 'The Armoury: Garage Controller'
+        data:
+          priority: 1
+- id: alert_vpn_offline
+  alias: 'Alert: VPN Server Offline'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.vpn_server
+      from: 'on'
+      to: 'off'
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: The VPN server is no longer available on the network.
+        title: 'The Armoury: VPN Service'
         data:
           priority: 1
 - id: alarm_away_triggers

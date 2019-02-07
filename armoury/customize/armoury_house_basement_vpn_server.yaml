@@ -1,0 +1,2 @@
+binary_sensor.vpn_server:
+  friendly_name: VPN Server

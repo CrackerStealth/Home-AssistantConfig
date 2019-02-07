@@ -2,7 +2,6 @@ default_view:
   view: yes
   name: House (Main)
   entities:
-    - alarm_control_panel.Armoury_Alarm_System
     - group.house_main_floor_front_entry
     - group.house_main_floor_living_room
     - group.house_main_floor_hallway
@@ -17,9 +16,13 @@ house_basement:
   view: yes
   name: House (Basement)
   entities:
-    - alarm_control_panel.Armoury_Alarm_System
     - group.house_basement_common_room
     - group.house_basement_office
+house_security:
+  view: yes
+  name: House (Security)
+  entities:
+    - alarm_control_panel.Armoury_Alarm_System  
 garage:
   view: yes
   name: Garage
@@ -42,6 +45,7 @@ status:
   name: Status
   entities: 
     - group.status_people
+    - group.status_hosts
     - group.status_nas
     - group.status_pihole
     - group.status_3d_printer

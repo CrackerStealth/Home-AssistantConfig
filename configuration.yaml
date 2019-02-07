@@ -64,7 +64,14 @@ logbook:
 
 # Enabled the recorder and keeps history for 30 days max
 recorder:
-    purge_keep_days: 30
+  db_url: !secret recorder_db_url
+  purge_keep_days: 30
+  exclude:
+    domains:
+      - automation
+      - group
+      - media_player
+      - trigger
 
 # Enables a map showing the location of tracked devices
 map:
@@ -76,12 +83,12 @@ sun:
 tts:
   - platform: google
 
-# Enable MQTT
-mqtt:
-  broker: !secret mqtt_host
-  port: !secret mqtt_port
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
+# Enable Network Trackers
+device_tracker:
+  - platform: nmap_tracker
+    home_interval: 5
+    hosts:
+      - !secret owner_01_cell_ip
 
 # Enable Pushover
 notify:

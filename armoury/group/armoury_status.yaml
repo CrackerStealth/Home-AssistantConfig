@@ -21,7 +21,8 @@ status_nas:
   entities: 
     - sensor.CPU_Load_Total
     - sensor.Memory_Usage_Real
-    - sensor.Network_Up_sensor
+    - sensor.Network_Up
+    - sensor.Network_Down
     - sensor.Status_sda
     - sensor.Status_sdb
     - sensor.Temperature_sda
@@ -31,11 +32,11 @@ status_pihole:
   name: "Pi-Hole DNS Server"
   control: hidden
   entities: 
-    - sensor.PiHole_Ads_Blocked_Today
-    - sensor.PiHole_DNS_Queries_Today
-    - sensor.PiHole_DNS_Queries_Forwarded
-    - sensor.PiHole_DNS_Queries_Cached
-    - sensor.PiHole_Domains_Blocked
+    - sensor.Pi_Hole_Ads_Blocked_Today
+    - sensor.Pi_Hole_DNS_Queries_Today
+    - sensor.Pi_Hole_DNS_Queries_Forwarded
+    - sensor.Pi_Hole_DNS_Queries_Cached
+    - sensor.Pi_Hole_Domains_Blocked
 status_battery_levels:
   name: "Battery Levels"
   control: hidden
@@ -45,3 +46,10 @@ status_battery_levels:
     - sensor.space_side_door_battery
     - sensor.space_lock_battery
     - sensor.bedroom_01_multisensor_battery
+status_hosts:
+  name: "Services"
+  control: hidden
+  entities:
+    - binary_sensor.garage_controller
+    - binary_sensor.vpn_server
+    - binary_sensor.hottub_temperature_service
