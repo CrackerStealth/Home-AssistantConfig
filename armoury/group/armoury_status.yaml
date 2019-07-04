@@ -19,15 +19,15 @@ status_nas:
   name: Network Attached Storage
   control: hidden
   entities: 
-    - sensor.CPU_Load_Total
-    - sensor.Memory_Usage_Real
-    - sensor.Network_Up
-    - sensor.Network_Down
-    - sensor.Status_sda
-    - sensor.Status_sdb
-    - sensor.Temperature_sda
-    - sensor.Temperature_sdb
-    - sensor.Volume_Used_volume_1
+    - sensor.synology_dsm_cpu_load_total
+    - sensor.synology_dsm_memory_usage_real
+    - sensor.synology_dsm_network_up
+    - sensor.synology_dsm_network_down
+    - sensor.synology_dsm_status_sda
+    - sensor.synology_dsm_status_sdb
+    - sensor.synology_dsm_temperature_sda
+    - sensor.synology_dsm_temperature_sdb
+    - sensor.synology_dsm_volume_used_volume_1
 status_pihole:
   name: "Pi-Hole DNS Server"
   control: hidden

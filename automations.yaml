@@ -129,8 +129,8 @@
   alias: 'Alert: High Heat In Master Bedroom'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.Master_Bedroom_Temperature
-      above: 24
+      entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+      above: 26.5
   action:
     - service: notify.armoury_pushover
       data:
@@ -138,6 +138,9 @@
         title: 'The Armoury: House'
         data:
           priority: 1
+    - service: switch.turn_off
+      data:
+        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
 - id: alert_master_bedroom_fireplace_turned_on
   alias: 'Alert: Master Bedroom Fireplace Turned On'
   trigger:
@@ -227,6 +230,8 @@
       entity_id: binary_sensor.garage_controller
       from: 'on'
       to: 'off'
+      for:
+        minutes: 30
   action:
     - service: notify.armoury_pushover
       data:
@@ -241,6 +246,8 @@
       entity_id: binary_sensor.hottub_temperature_service
       from: 'on'
       to: 'off'
+      for:
+        minutes: 30
   action:
     - service: notify.armoury_pushover
       data:
@@ -255,11 +262,29 @@
       entity_id: binary_sensor.vpn_server
       from: 'on'
       to: 'off'
+      for:
+        minutes: 30
   action:
     - service: notify.armoury_pushover
       data:
         message: The VPN server is no longer available on the network.
         title: 'The Armoury: VPN Service'
+        data:
+          priority: 1
+- id: alert_garage_open_too_long
+  alias: 'Alert: Garage Open Too Long'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_main_door
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 30
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: The garage door has been open for too long. Over 30 minutes.
+        title: 'The Armoury: Garage Door Security'
         data:
           priority: 1
 - id: alarm_away_triggers

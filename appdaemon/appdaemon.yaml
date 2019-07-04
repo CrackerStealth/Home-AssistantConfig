@@ -15,5 +15,5 @@ hadashboard:
   dash_url: https://127.0.0.1:5050
   dash_dir: /config/appdaemon/dashboards
   dash_password: 
-  dash_ssl_certificate: 
-  dash_ssl_key: 
+  dash_ssl_certificate: /ssl/fullchain.pem
+  dash_ssl_key: /ssl/privkey.pem

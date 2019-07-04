@@ -21,6 +21,9 @@ cloud:
 
 hassio:
 
+# Enables system health
+system_health:
+
 # Enables the frontend
 frontend:
 
@@ -81,7 +84,8 @@ sun:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Enable Network Trackers
 device_tracker:
@@ -89,6 +93,13 @@ device_tracker:
     home_interval: 5
     hosts:
       - !secret owner_01_cell_ip
+
+# Enable MQTT Server
+mqtt:
+  broker: !secret mqtt_server_ip
+  port: !secret mqtt_server_port
+  username: !secret mqtt_server_username
+  password: !secret mqtt_server_password
 
 # Enable Pushover
 notify:
@@ -124,8 +135,7 @@ owntracks:
 
 # Enable OpenWeatherMap
 weather:
-  - platform: openweathermap
-    api_key: !secret open_weather_map_api_key
+  - platform: environment_canada
 
 # Enable Z-Wave
 zwave:

@@ -1,2 +1,2 @@
-switch.gazebo_light:
+light.gazebo_light:
   friendly_name: Gazebo Light

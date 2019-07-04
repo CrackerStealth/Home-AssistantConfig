@@ -26,9 +26,10 @@ house_main_floor_bedroom_01:
     - light.Bedside_Left
     - light.Bedside_Right
 house_main_floor_bedroom_02:
-  name: Spare Bedroom
+  name: Upstairs Office
   control: hidden
   entities:
+    - light.desk_rgb
 house_main_floor_bathroom:
   name: Bathroom
   control: hidden
