@@ -1,0 +1,6 @@
+name: opensprinkler_rain_sensor
+platform: rest
+resource: !secret rest_endpoint_opensprinkler_controller_variables
+method: GET
+verify_ssl: false
+value_template: '{{ value_json.rs == 1 }}'

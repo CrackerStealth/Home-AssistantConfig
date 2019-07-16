@@ -1,0 +1,12 @@
+platform: generic_thermostat
+name: Master Bedroom Heat
+heater: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+target_sensor: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+min_temp: 16
+max_temp: 26
+ac_mode: false
+min_cycle_duration:
+  minutes: 1
+cold_tolerance: 1.00
+hot_tolerance: 0.75
+precision: 0.5

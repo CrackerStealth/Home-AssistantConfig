@@ -1,0 +1,6 @@
+name: garage_main_door
+platform: rest
+resource: !secret rest_endpoint_garage
+method: GET
+verify_ssl: false
+value_template: '{{ value_json["update"][0][1] }}'

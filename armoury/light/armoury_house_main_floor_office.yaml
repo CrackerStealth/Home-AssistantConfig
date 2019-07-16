@@ -1,0 +1,23 @@
+platform: mqtt
+unique_id: office_desk_rgb
+name: "Desk RGB"
+state_topic: "armoury/mainfloor/office/rgb01/light/status"
+command_topic: "armoury/mainfloor/office/rgb01/light/switch"
+brightness_state_topic: "armoury/mainfloor/office/rgb01/brightness/status"
+brightness_command_topic: "armoury/mainfloor/office/rgb01/brightness/set"
+rgb_state_topic: "armoury/mainfloor/office/rgb01/rgb/status"
+rgb_command_topic: "armoury/mainfloor/office/rgb01/rgb/set"
+effect_state_topic: "armoury/mainfloor/office/rgb01/effect/status"
+effect_command_topic: "armoury/mainfloor/office/rgb01/effect/set"
+effect_list:
+  - rainbow
+  - rainbow_with_glitter
+  - confetti
+  - sinelon
+  - bpm
+  - juggle
+  - candycane
+qos: 0
+payload_on: "on"
+payload_off: "off"
+optimistic: false

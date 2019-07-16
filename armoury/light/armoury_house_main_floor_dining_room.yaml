@@ -1,0 +1,6 @@
+platform: group
+name: Dining Room Lights
+entities:
+  - light.Dining_Room_1
+  - light.Dining_Room_2
+  - light.Dining_Room_3

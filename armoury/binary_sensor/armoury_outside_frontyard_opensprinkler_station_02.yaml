@@ -1,0 +1,6 @@
+name: opensprinkler_station_02
+platform: rest
+resource: !secret rest_endpoint_opensprinkler_station_status
+method: GET
+verify_ssl: false
+value_template: '{{ value_json.sn[1] == 1 }}'

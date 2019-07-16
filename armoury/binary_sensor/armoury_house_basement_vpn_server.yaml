@@ -1,0 +1,5 @@
+name: vpn_server
+platform: ping
+host: !secret vpn_server_ip
+count: 3
+scan_interval: 180

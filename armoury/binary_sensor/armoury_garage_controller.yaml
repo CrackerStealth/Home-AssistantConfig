@@ -1,0 +1,5 @@
+name: garage_controller
+platform: ping
+host: !secret garage_controller_ip
+count: 3
+scan_interval: 180

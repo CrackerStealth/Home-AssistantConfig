@@ -1,0 +1,5 @@
+platform: group
+name: Master Bedroom Lights
+entities:
+  - light.bedside_left
+  - light.bedside_right

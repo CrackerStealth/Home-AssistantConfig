@@ -5,12 +5,16 @@
 !appdaemon/apps
 !appdaemon/dashboards
 !armoury/
+!armoury/binary_sensor
+!armoury/climate
 !armoury/customize
 !armoury/group
 !armoury/input
 !armoury/input/number
 !armoury/input/select
+!armoury/light
 !armoury/sensor
+!armoury/switch
 !.gitignore
 entity_registry.yaml
 known_devices.yaml
