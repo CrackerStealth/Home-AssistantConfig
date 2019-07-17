@@ -1,0 +1,2 @@
+binary_sensor.opensprinkler_controller:
+  friendly_name: OpenSprinkler

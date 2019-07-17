@@ -51,5 +51,6 @@ status_hosts:
   control: hidden
   entities:
     - binary_sensor.garage_controller
+    - binary_sensor.opensprinkler_controller
     - binary_sensor.vpn_server
     - binary_sensor.hottub_temperature_service

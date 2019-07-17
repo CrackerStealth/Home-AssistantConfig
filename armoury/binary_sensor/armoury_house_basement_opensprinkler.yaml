@@ -1,0 +1,5 @@
+name: opensprinkler_controller
+platform: ping
+host: !secret opensprinkler_controller_ip
+count: 3
+scan_interval: 180

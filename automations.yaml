@@ -239,6 +239,22 @@
         title: 'The Armoury: Garage Controller'
         data:
           priority: 1
+- id: opensprinkler_controller_offline
+  alias: 'Alert: OpenSprinkler Offline'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.opensprinkler_controller
+      from: 'on'
+      to: 'off'
+      for:
+        minutes: 30
+  action:
+    - service: notify.armoury_pushover
+      data:
+        message: The OpenSprinkler controller is no longer available on the network.
+        title: 'The Armoury: OpenSprinkler Controller'
+        data:
+          priority: 1
 - id: alert_hottub_temp_sensor_offline
   alias: 'Alert: Hot Tub Temeprature Service Offline'
   trigger:
@@ -466,3 +482,12 @@
     - service: light.turn_off
       data:
         entity_id: light.homeseer_hswd100_wall_dimmer_level
+- id: timed_nightly_backup
+  alias: 'Timed: Nightly Backup'
+  trigger:
+    - platform: time
+      at: '03:00:00'
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: "{{ now().strftime('%Y%m%d-%H%M') }}-FullBackupNightly"

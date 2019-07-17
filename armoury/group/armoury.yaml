@@ -35,7 +35,7 @@ outside:
   name: Outside
   entities: 
     - sun.sun
-    - weather.openweathermap
+    - weather.saskatoon
     - sensor.opensprinkler_rain_sensor_human_readable
     - group.outside_front_yard
     - group.outside_driveway

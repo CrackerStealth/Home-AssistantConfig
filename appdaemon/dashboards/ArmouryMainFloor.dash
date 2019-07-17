@@ -14,7 +14,7 @@ layout:
     - front_door, front_door_lock, side_door, side_door_lock, garage_door
     - rain_detector, main_clock (3x1)
     - house_temperature, master_bedroom_temperature, garage_temperature, hottub_temperature
-    - basement_light, office_light, kitchen_light, living_room_light, master_bedroom_light
+    - gazebo_light, basement_light, office_light, kitchen_light, living_room_light, master_bedroom_light
 
 main_clock:
     widget_type: clock
@@ -131,6 +131,13 @@ garage_door:
     state_map:
       "on": Open
       "off": Closed
+
+gazebo_light:
+    widget_type: light
+    title: Gazebo
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-outline
+    entity: light.gazebo_light
 
 basement_light:
     widget_type: light
