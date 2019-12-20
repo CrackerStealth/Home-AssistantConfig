@@ -56,3 +56,17 @@ sensors:
       {% else %}
         mdi:door-closed
       {% endif %}
+  bedroom_01_motion_sensor_human_readable:
+    friendly_name: Master Bedroom Motion
+    value_template: >-
+      {% if is_state('sensor.fibaro_system_fgms001zw5_motion_sensor_general', '0') %}
+        Not Detected
+      {% else %}
+        Detected
+      {% endif %}
+    icon_template: >-
+      {% if is_state('sensor.fibaro_system_fgms001zw5_motion_sensor_general', '0') %}
+        mdi:home-outline
+      {% else %}
+        mdi:motion-sensor
+      {% endif %}

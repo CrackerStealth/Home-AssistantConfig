@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.hottub_temperature
-      below: 50
+      below: 35
       for:
         minutes: 30
   action:
@@ -488,6 +488,12 @@
     - platform: time
       at: '03:00:00'
   action:
+    - service: hassio.addon_stop
+      data:
+        addon: "core_mariadb"
     - service: hassio.snapshot_full
       data_template:
         name: "{{ now().strftime('%Y%m%d-%H%M') }}-FullBackupNightly"
+    - service: hassio.addon_start
+      data:
+        addon: "core_mariadb"

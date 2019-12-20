@@ -22,18 +22,19 @@ house_security:
   view: yes
   name: House (Security)
   entities:
-    - alarm_control_panel.Armoury_Alarm_System  
+    - alarm_control_panel.Armoury_Alarm_System
+    - group.security
 garage:
   view: yes
   name: Garage
-  entities: 
+  entities:
     - sensor.garage_temperature
     - sensor.garage_main_door_human_readable
     - group.garage_garage
 outside:
   view: yes
   name: Outside
-  entities: 
+  entities:
     - sun.sun
     - weather.saskatoon
     - sensor.opensprinkler_rain_sensor_human_readable
@@ -43,7 +44,7 @@ outside:
 status:
   view: yes
   name: Status
-  entities: 
+  entities:
     - group.status_people
     - group.status_hosts
     - group.status_nas

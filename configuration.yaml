@@ -130,6 +130,13 @@ octoprint:
     bed: !secret 3d_printer_controller_heated_bed
     number_of_tools: !secret 3d_printer_controller_tools
 
+# Enable Pi-Hole
+pi_hole:
+  host: !secret pihole_host
+  location: admin
+  ssl: false
+  verify_ssl: false
+
 # Enable Trackers
 owntracks:
 

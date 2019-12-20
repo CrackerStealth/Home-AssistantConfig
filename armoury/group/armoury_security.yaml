@@ -1,0 +1,8 @@
+security:
+  name: Security Sensors
+  control: hidden
+  entities:
+    - sensor.front_door_sensor_human_readable
+    - sensor.side_door_sensor_human_readable
+    - sensor.bedroom_01_motion_sensor_human_readable
+    - sensor.garage_main_door_human_readable
