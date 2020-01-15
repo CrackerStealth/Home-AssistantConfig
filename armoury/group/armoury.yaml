@@ -23,6 +23,7 @@ house_security:
   name: House (Security)
   entities:
     - alarm_control_panel.Armoury_Alarm_System
+    - camera.ishtar
     - group.security
 garage:
   view: yes

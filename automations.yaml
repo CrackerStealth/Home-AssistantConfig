@@ -3,13 +3,13 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.hottub_temperature
-      below: 35
+      below: 38
       for:
-        minutes: 30
+        minutes: 5
   action:
     - service: notify.armoury_pushover
       data:
-        message: Hot tub has been below temperature for 30 minutes.
+        message: Hot tub has been below temperature for 5 minutes.
         title: 'The Armoury: Hot Tub'
         data:
           priority: 1

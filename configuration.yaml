@@ -144,6 +144,16 @@ owntracks:
 weather:
   - platform: environment_canada
 
+# Enable Security Cameras
+stream:
+
+camera:
+  - platform: generic
+    name: ishtar
+    still_image_url: !secret cam_ishtar_snapshot_url
+    stream_source: !secret cam_ishtar_rstp_url
+    verify_ssl: false
+
 # Enable Z-Wave
 zwave:
   usb_path: /dev/ttyACM0
