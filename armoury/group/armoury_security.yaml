@@ -4,5 +4,5 @@ security:
   entities:
     - sensor.front_door_sensor_human_readable
     - sensor.side_door_sensor_human_readable
-    - sensor.bedroom_01_motion_sensor_human_readable
+    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     - sensor.garage_main_door_human_readable

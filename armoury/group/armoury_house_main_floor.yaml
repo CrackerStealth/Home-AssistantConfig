@@ -29,7 +29,6 @@ house_main_floor_bedroom_02:
   name: Upstairs Office
   control: hidden
   entities:
-    - light.desk_rgb
 house_main_floor_bathroom:
   name: Bathroom
   control: hidden
@@ -41,6 +40,7 @@ house_main_floor_dining:
   entities:
     - media_player.Armoury_Dining_Room
     - light.Dining_Room_Lights
+    - light.hibiki
 house_main_floor_kitchen:
   name: Kitchen
   control: hidden

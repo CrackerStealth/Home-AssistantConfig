@@ -26,6 +26,7 @@ system_health:
 
 # Enables the frontend
 frontend:
+  themes: !include_dir_merge_named armoury/themes
 
 # Enables configuration UI
 config:
@@ -95,11 +96,11 @@ device_tracker:
       - !secret owner_01_cell_ip
 
 # Enable MQTT Server
-mqtt:
-  broker: !secret mqtt_server_ip
-  port: !secret mqtt_server_port
-  username: !secret mqtt_server_username
-  password: !secret mqtt_server_password
+#mqtt:
+#  broker: !secret mqtt_server_ip
+#  port: !secret mqtt_server_port
+#  username: !secret mqtt_server_username
+#  password: !secret mqtt_server_password
 
 # Enable Pushover
 notify:
@@ -120,7 +121,8 @@ nest:
 hue:
   bridges:
     - host: !secret philips_hue_ip
-      filename: phue.conf
+      allow_unreachable: false
+      allow_hue_groups: true
 
 # Enable Octo-print
 octoprint:
@@ -136,9 +138,6 @@ pi_hole:
   location: admin
   ssl: false
   verify_ssl: false
-
-# Enable Trackers
-owntracks:
 
 # Enable OpenWeatherMap
 weather:
