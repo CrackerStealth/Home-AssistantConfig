@@ -1,16 +1,13 @@
 outside_front_yard:
   name: Front Yard
-  control: hidden
   entities:
     - binary_sensor.opensprinkler_station_01
     - binary_sensor.opensprinkler_station_02
 outside_driveway:
   name: Driveway
-  control: hidden
   entities:
 outside_back_yard:
   name: Back Yard
-  control: hidden
   entities: 
     - light.gazebo_light
     - sensor.hottub_temperature

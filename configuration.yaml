@@ -28,6 +28,9 @@ system_health:
 frontend:
   themes: !include_dir_merge_named armoury/themes
 
+lovelace:
+#  mode: yaml
+
 # Enables configuration UI
 config:
 
@@ -138,6 +141,14 @@ pi_hole:
   location: admin
   ssl: false
   verify_ssl: false
+
+# Enable Synology DSM
+synology_dsm:
+  - host: !secret synology_nas_ip
+    port: !secret synology_nas_port
+    ssl: true
+    username: !secret synology_nas_user
+    password: !secret synology_nas_password
 
 # Enable OpenWeatherMap
 weather:

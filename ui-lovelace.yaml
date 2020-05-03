@@ -1,0 +1,205 @@
+background: var(--background-image)
+title: Armoury
+views:
+  - badges: []
+    cards:
+      - entities:
+          - sensor.front_door_sensor_human_readable
+          - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+          - light.homeseer_hswd100_wall_dimmer_level_2
+        show_header_toggle: false
+        title: Front Entryway
+        type: entities
+      - entities:
+          - light.aeotec_zw099_smart_dimmer_6_level
+          - light.chair_lamp
+        show_header_toggle: false
+        title: Living Room
+        type: entities
+      - entities:
+          - sensor.elina_thermostat_humidity
+        show_header_toggle: false
+        title: Hallway
+        type: entities
+      - entity: climate.elina
+        type: thermostat
+      - entities:
+          - switch.aeotec_zw096_smart_switch_6_switch
+          - light.bedside_left
+          - light.bedside_right
+        show_header_toggle: false
+        title: Master Bedroom
+        type: entities
+      - entity: climate.master_bedroom_heat
+        type: thermostat
+      - entity: media_player.armoury_bathroom
+        type: media-control
+      - entities:
+          - light.dining_room_lights
+          - light.hibiki
+        show_header_toggle: false
+        title: Dining Room
+        type: entities
+      - entity: media_player.armoury_dining_room
+        type: media-control
+      - entities:
+          - light.kitchen_cabinet
+        show_header_toggle: false
+        title: Kitchen
+        type: entities
+      - entity: media_player.armoury_kitchen
+        type: media-control
+      - entities:
+          - sensor.side_door_sensor_human_readable
+          - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+        show_header_toggle: false
+        title: Side Entryway
+        type: entities
+    path: default_view
+    title: House (Main)
+  - badges: []
+    cards:
+      - entities:
+          - light.homeseer_hswd100_wall_dimmer_level_3
+        show_header_toggle: false
+        title: Basement
+        type: entities
+      - entity: media_player.armoury_exercise_room
+        type: media-control
+      - entities:
+          - light.homeseer_hswd100_wall_dimmer_level
+        show_header_toggle: false
+        title: Office
+        type: entities
+    path: house_basement
+    title: House (Basement)
+  - badges: []
+    cards:
+      - entities:
+          - sensor.front_door_sensor_human_readable
+          - sensor.side_door_sensor_human_readable
+          - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+          - sensor.garage_main_door_human_readable
+        show_header_toggle: false
+        title: Security Sensors
+        type: entities
+      - entity: alarm_control_panel.armoury_alarm_system
+        type: alarm-panel
+      - entity: camera.ishtar
+        type: picture-entity
+    path: house_security
+    title: House (Security)
+  - badges:
+      - entity: sensor.garage_temperature
+      - entity: sensor.garage_main_door_human_readable
+    cards:
+      - entities:
+          - script.control_garage_door
+        show_header_toggle: false
+        title: Garage
+        type: entities
+    path: garage
+    title: Garage
+  - badges:
+      - entity: sensor.opensprinkler_rain_sensor_human_readable
+      - entity: sun.sun
+    cards:
+      - entities:
+          - binary_sensor.opensprinkler_station_01
+          - binary_sensor.opensprinkler_station_02
+        show_header_toggle: false
+        title: Front Yard
+        type: entities
+      - entities:
+          - light.gazebo_light
+          - sensor.hottub_temperature
+          - binary_sensor.opensprinkler_station_03
+          - binary_sensor.opensprinkler_station_04
+          - binary_sensor.opensprinkler_station_05
+        show_header_toggle: false
+        title: Back Yard
+        type: entities
+      - entity: weather.saskatoon
+        type: weather-forecast
+    path: outside
+    title: Outside
+  - badges: []
+    cards:
+      - entities:
+          - device_tracker.matsumoto_matsumoto
+        show_header_toggle: false
+        title: People
+        type: entities
+      - entities:
+          - binary_sensor.garage_controller
+          - binary_sensor.opensprinkler_controller
+          - binary_sensor.vpn_server
+          - binary_sensor.hottub_temperature_service
+        show_header_toggle: false
+        title: Services
+        type: entities
+      - entities:
+          - sensor.synology_dsm_cpu_load_total
+          - sensor.synology_dsm_memory_usage_real
+          - sensor.synology_dsm_network_up
+          - sensor.synology_dsm_network_down
+          - sensor.synology_dsm_status_sda
+          - sensor.synology_dsm_status_sdb
+          - sensor.synology_dsm_temperature_sda
+          - sensor.synology_dsm_temperature_sdb
+          - sensor.synology_dsm_volume_used_volume_1
+        show_header_toggle: false
+        title: Network Attached Storage
+        type: entities
+      - entities:
+          - sensor.pi_hole_ads_blocked_today
+          - sensor.pi_hole_dns_queries_today
+          - sensor.pi_hole_dns_queries_forwarded
+          - sensor.pi_hole_dns_queries_cached
+          - sensor.pi_hole_domains_blocked
+        show_header_toggle: false
+        title: Pi-Hole DNS Server
+        type: entities
+      - entities:
+          - binary_sensor.sadi_printing
+          - binary_sensor.sadi_printing_error
+          - sensor.sadi_current_state
+          - sensor.sadi_job_percentage
+          - sensor.sadi_target_tool0_temp
+          - sensor.sadi_actual_tool0_temp
+          - sensor.sadi_target_bed_temp
+          - sensor.sadi_actual_bed_temp
+        show_header_toggle: false
+        title: 3D Printer
+        type: entities
+      - entities:
+          - sensor.living_room_front_door_battery
+          - sensor.living_room_lock_battery
+          - sensor.space_side_door_battery
+          - sensor.space_lock_battery
+          - sensor.bedroom_01_multisensor_battery
+        show_header_toggle: false
+        title: Battery Levels
+        type: entities
+    path: status
+    title: Status
+  - badges: []
+    cards:
+      - entities:
+          - sensor.aeotec_zw096_smart_switch_6_current
+          - sensor.aeotec_zw096_smart_switch_6_energy
+          - sensor.aeotec_zw096_smart_switch_6_power
+          - sensor.aeotec_zw096_smart_switch_6_voltage
+        show_header_toggle: false
+        title: Bedroom Fireplace
+        type: entities
+      - entities:
+          - sensor.aeotec_zw099_smart_dimmer_6_current
+          - sensor.aeotec_zw099_smart_dimmer_6_energy
+          - sensor.aeotec_zw099_smart_dimmer_6_power
+          - sensor.aeotec_zw099_smart_dimmer_6_voltage
+        show_header_toggle: false
+        title: Living Room Lamp 01
+        type: entities
+    path: power
+    title: Power Usage

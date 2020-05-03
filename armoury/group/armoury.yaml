@@ -1,5 +1,4 @@
 default_view:
-  view: yes
   name: House (Main)
   entities:
     - group.house_main_floor_front_entry
@@ -13,27 +12,23 @@ default_view:
     - group.house_main_floor_side_entry
     - group.house_main_floor_laundry_room
 house_basement:
-  view: yes
   name: House (Basement)
   entities:
     - group.house_basement_common_room
     - group.house_basement_office
 house_security:
-  view: yes
   name: House (Security)
   entities:
     - alarm_control_panel.Armoury_Alarm_System
     - camera.ishtar
     - group.security
 garage:
-  view: yes
   name: Garage
   entities:
     - sensor.garage_temperature
     - sensor.garage_main_door_human_readable
     - group.garage_garage
 outside:
-  view: yes
   name: Outside
   entities:
     - sun.sun
@@ -43,7 +38,6 @@ outside:
     - group.outside_driveway
     - group.outside_back_yard
 status:
-  view: yes
   name: Status
   entities:
     - group.status_people
@@ -53,7 +47,6 @@ status:
     - group.status_3d_printer
     - group.status_battery_levels
 power:
-  view: yes
   name: Power Usage
   entities:
     - group.power_bedroom_01_fireplace

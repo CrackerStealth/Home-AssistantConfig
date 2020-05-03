@@ -1,11 +1,9 @@
 status_people:
   name: People
-  control: hidden
   entities:
     - device_tracker.matsumoto_matsumoto
 status_3d_printer:
   name: 3D Printer
-  control: hidden
   entities:
     - binary_sensor.sadi_printing
     - binary_sensor.sadi_printing_error
@@ -17,20 +15,18 @@ status_3d_printer:
     - sensor.sadi_actual_bed_temp
 status_nas:
   name: Network Attached Storage
-  control: hidden
   entities: 
-    - sensor.synology_dsm_cpu_load_total
-    - sensor.synology_dsm_memory_usage_real
-    - sensor.synology_dsm_network_up
-    - sensor.synology_dsm_network_down
-    - sensor.synology_dsm_status_sda
-    - sensor.synology_dsm_status_sdb
-    - sensor.synology_dsm_temperature_sda
-    - sensor.synology_dsm_temperature_sdb
-    - sensor.synology_dsm_volume_used_volume_1
+    - sensor.synology_cpu_load_total
+    - sensor.synology_memory_usage_real
+    - sensor.synology_network_up
+    - sensor.synology_network_down
+    - sensor.synology_status_sda
+    - sensor.synology_status_sdb
+    - sensor.synology_temperature_sda
+    - sensor.synology_temperature_sdb
+    - sensor.synology_volume_used_volume_1
 status_pihole:
   name: "Pi-Hole DNS Server"
-  control: hidden
   entities: 
     - sensor.Pi_Hole_Ads_Blocked_Today
     - sensor.Pi_Hole_DNS_Queries_Today
@@ -39,7 +35,6 @@ status_pihole:
     - sensor.Pi_Hole_Domains_Blocked
 status_battery_levels:
   name: "Battery Levels"
-  control: hidden
   entities:
     - sensor.living_room_front_door_battery
     - sensor.living_room_lock_battery
@@ -48,7 +43,6 @@ status_battery_levels:
     - sensor.bedroom_01_multisensor_battery
 status_hosts:
   name: "Services"
-  control: hidden
   entities:
     - binary_sensor.garage_controller
     - binary_sensor.opensprinkler_controller

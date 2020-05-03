@@ -1,11 +1,9 @@
 house_basement_common_room:
   name: Basement
-  control: hidden
   entities:
     - media_player.Armoury_Exercise_Room
     - light.homeseer_hswd100_wall_dimmer_level_3
 house_basement_office:
   name: Office
-  control: hidden
   entities:
     - light.homeseer_hswd100_wall_dimmer_level

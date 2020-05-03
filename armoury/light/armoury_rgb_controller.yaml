@@ -1,7 +1,0 @@
-platform: flux_led
-automatic_add: false
-devices:
-  192.168.1.55:
-    name: gazebo_light
-    mode: "rgbw"
-    protocol: 'ledenet'

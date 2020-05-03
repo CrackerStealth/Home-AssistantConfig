@@ -1,6 +1,5 @@
 security:
   name: Security Sensors
-  control: hidden
   entities:
     - sensor.front_door_sensor_human_readable
     - sensor.side_door_sensor_human_readable
