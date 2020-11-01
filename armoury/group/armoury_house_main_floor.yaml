@@ -33,13 +33,14 @@ house_main_floor_dining:
   name: Dining Room
   entities:
     - media_player.Armoury_Dining_Room
-    - light.Dining_Room_Lights
     - light.hibiki
+    - light.Dining_Room_Lights
 house_main_floor_kitchen:
   name: Kitchen
   entities:
-    - light.Kitchen_Cabinet
     - media_player.Armoury_Kitchen
+    - light.esdeath
+    - light.Kitchen_Cabinet
 house_main_floor_side_entry:
   name: Side Entryway
   entities:

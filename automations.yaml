@@ -482,6 +482,66 @@
     - service: light.turn_off
       data:
         entity_id: light.homeseer_hswd100_wall_dimmer_level
+- id: react_accent_lights_off
+  alias: 'React: Accent Lights Turn Off'
+  trigger:
+    - platform: state
+      entity_id: input_select.accent_lights
+      to: 'Off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hibiki
+          - light.esdeath
+- id: react_accent_lights_rainbow
+  alias: 'React: Accent Lights Turn On (Rainbow)'
+  trigger:
+    - platform: state
+      entity_id: input_select.accent_lights
+      to: 'Rainbow'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.hibiki
+          - light.esdeath
+- id: react_accent_lights_halloween
+  alias: 'React: Accent Lights Turn On (Halloween)'
+  trigger:
+    - platform: state
+      entity_id: input_select.accent_lights
+      to: 'Halloween'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.hibiki
+          - light.esdeath
+- id: react_accent_lights_christmas
+  alias: 'React: Accent Lights Turn On (Christmas)'
+  trigger:
+    - platform: state
+      entity_id: input_select.accent_lights
+      to: 'Christmas'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.hibiki
+          - light.esdeath
+- id: react_accent_lights_northern_lights
+  alias: 'React: Accent Lights Turn On (Northern Lights)'
+  trigger:
+    - platform: state
+      entity_id: input_select.accent_lights
+      to: 'Northern Lights'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.hibiki
+          - light.esdeath
 - id: timed_nightly_backup
   alias: 'Timed: Nightly Backup'
   trigger:

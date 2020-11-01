@@ -9,7 +9,7 @@ outside_driveway:
 outside_back_yard:
   name: Back Yard
   entities: 
-    - light.gazebo_light
+    - light.sakuya
     - sensor.hottub_temperature
     - binary_sensor.opensprinkler_station_03
     - binary_sensor.opensprinkler_station_04

@@ -20,8 +20,8 @@ status_nas:
     - sensor.synology_memory_usage_real
     - sensor.synology_network_up
     - sensor.synology_network_down
-    - sensor.synology_status_sda
-    - sensor.synology_status_sdb
+    - sensor.synology_status_smart_sda
+    - sensor.synology_status_smart_sdb
     - sensor.synology_temperature_sda
     - sensor.synology_temperature_sdb
     - sensor.synology_volume_used_volume_1
@@ -44,6 +44,7 @@ status_battery_levels:
 status_hosts:
   name: "Services"
   entities:
+    - binary_sensor.internet_up
     - binary_sensor.garage_controller
     - binary_sensor.opensprinkler_controller
     - binary_sensor.vpn_server

@@ -1,0 +1,2 @@
+binary_sensor.internet_up:
+  friendly_name: Internet Connected

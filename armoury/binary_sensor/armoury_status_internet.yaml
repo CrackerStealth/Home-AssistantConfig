@@ -1,0 +1,5 @@
+name: internet_up
+platform: ping
+host: !secret internet_test_ip
+count: 3
+scan_interval: 150

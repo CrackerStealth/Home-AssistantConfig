@@ -1,13 +1,14 @@
 - platform: manual
   name: Armoury Alarm System
   code: !secret home_alarm_code
-  pending_time: 60
+  arming_time: 60
+  delay_time: 30
   trigger_time: 15
   armed_home:
-    pending_time: 0
+    arming_time: 0
+    delay_time: 0
   armed_away:
-    pending_time: 60
+    arming_time: 60
   armed_night:
-    pending_time: 0
-  triggered:
-    pending_time: 30
+    arming_time: 0
+    delay_time: 0

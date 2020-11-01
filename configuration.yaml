@@ -35,7 +35,6 @@ lovelace:
 config:
 
 http:
-  base_url: !secret http_hostname
   ssl_certificate: !secret http_ssl_crt
   ssl_key: !secret http_ssl_key
 
@@ -177,6 +176,7 @@ climate: !include_dir_list armoury/climate
 sensor: !include_dir_list armoury/sensor
 switch: !include_dir_list armoury/switch
 light: !include_dir_list armoury/light
+input_select: !include_dir_merge_named armoury/input_select
 
 shell_command: !include armoury/shell_command.yaml
 automation: !include automations.yaml
