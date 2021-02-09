@@ -2,6 +2,11 @@ status_people:
   name: People
   entities:
     - device_tracker.matsumoto_matsumoto
+status_decore:
+  name: Decore
+  entities:
+    - input_boolean.accent_lights_auto
+    - input_select.accent_lights
 status_3d_printer:
   name: 3D Printer
   entities:
@@ -16,31 +21,31 @@ status_3d_printer:
 status_nas:
   name: Network Attached Storage
   entities: 
-    - sensor.synology_cpu_load_total
-    - sensor.synology_memory_usage_real
-    - sensor.synology_network_up
-    - sensor.synology_network_down
-    - sensor.synology_status_smart_sda
-    - sensor.synology_status_smart_sdb
-    - sensor.synology_temperature_sda
-    - sensor.synology_temperature_sdb
-    - sensor.synology_volume_used_volume_1
+    - sensor.sakura_cpu_load_total
+    - sensor.sakura_memory_usage_real
+    - sensor.sakura_network_up
+    - sensor.sakura_network_down
+    - sensor.sakura_drive_1_status_smart
+    - sensor.sakura_drive_2_status_smart
+    - sensor.sakura_drive_1_temperature
+    - sensor.sakura_drive_2_temperature
+    - sensor.sakura_volume_1_volume_used
 status_pihole:
   name: "Pi-Hole DNS Server"
   entities: 
-    - sensor.Pi_Hole_Ads_Blocked_Today
-    - sensor.Pi_Hole_DNS_Queries_Today
-    - sensor.Pi_Hole_DNS_Queries_Forwarded
-    - sensor.Pi_Hole_DNS_Queries_Cached
-    - sensor.Pi_Hole_Domains_Blocked
+    - sensor.pi_hole_ads_blocked_today
+    - sensor.pi_hole_dns_queries_today
+    - sensor.pi_hole_dns_queries_forwarded
+    - sensor.pi_hole_dns_queries_cached
+    - sensor.pi_hole_domains_blocked
 status_battery_levels:
   name: "Battery Levels"
   entities:
-    - sensor.living_room_front_door_battery
-    - sensor.living_room_lock_battery
-    - sensor.space_side_door_battery
-    - sensor.space_lock_battery
-    - sensor.bedroom_01_multisensor_battery
+    - sensor.front_entry_door_sensor_01_battery_level
+    - sensor.front_entry_door_lock_01_battery_level
+    - sensor.side_entry_door_sensor_01_battery_level
+    - sensor.side_entry_door_lock_01_battery_level
+    - sensor.master_bedroom_multisensor_01_battery_level
 status_hosts:
   name: "Services"
   entities:
@@ -48,4 +53,4 @@ status_hosts:
     - binary_sensor.garage_controller
     - binary_sensor.opensprinkler_controller
     - binary_sensor.vpn_server
-    - binary_sensor.hottub_temperature_service
+    - binary_sensor.hot_tub_status

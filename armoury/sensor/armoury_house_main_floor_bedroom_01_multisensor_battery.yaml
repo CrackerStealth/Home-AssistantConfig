@@ -1,6 +1,0 @@
-platform: template
-sensors:
-  bedroom_01_multisensor_battery:
-    friendly_name: 'Master Bedroom Multisensor'
-    value_template: '{{ states.zwave.fibaro_system_fgms001zw5_motion_sensor.attributes.battery_level }}'
-    unit_of_measurement: '%'

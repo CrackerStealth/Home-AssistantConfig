@@ -10,7 +10,7 @@ outside_back_yard:
   name: Back Yard
   entities: 
     - light.sakuya
-    - sensor.hottub_temperature
+    - sensor.hot_tub_temperature_01
     - binary_sensor.opensprinkler_station_03
     - binary_sensor.opensprinkler_station_04
     - binary_sensor.opensprinkler_station_05

@@ -1,10 +1,10 @@
-light.Aeotec_ZW099_Smart_Dimmer_6_Level:
-  name: Couch Lamp
-  room: Living Room
+light.asuna:
+  name: Asuna
+  room: Office
 #  type: 'action.devices.types.LIGHT'
-light.chair_lamp:
-  name: Chair Lamp
-  room: Living Room
+light.basement_dimmer_01:
+  name: Basement Lights
+  room: Basement
 #  type: 'action.devices.types.LIGHT'
 light.bedside_left:
   name: Bedside Left
@@ -14,21 +14,9 @@ light.bedside_right:
   name: Bedside Right
   room: Master Bedroom
 #  type: 'action.devices.types.LIGHT'
-light.homeseer_hswd100_wall_dimmer_level_2:
-  name: Doorway Light
+light.chair_lamp:
+  name: Chair Lamp
   room: Living Room
-#  type: 'action.devices.types.LIGHT'
-light.homeseer_hswd100_wall_dimmer_level_3:
-  name: Basement Lights
-  room: Basement
-#  type: 'action.devices.types.LIGHT'
-light.homeseer_hswd100_wall_dimmer_level:
-  name: Office Light
-  room: Office
-#  type: 'action.devices.types.LIGHT'
-light.kitchen_cabinet:
-  name: Kitchen Cabinet
-  room: Kitchen
 #  type: 'action.devices.types.LIGHT'
 light.dining_room_1:
   name: Dining Room 1
@@ -42,7 +30,27 @@ light.dining_room_3:
   name: Dining Room 3
   room: Dining Room
 #  type: 'action.devices.types.LIGHT'
-switch.Aeotec_ZW096_Smart_Switch_6_Switch:
+light.front_entry_dimmer_01:
+  name: Front Entry Lights
+  room: Living Room
+#  type: 'action.devices.types.LIGHT'
+light.guest_bedroom_dimmer_01:
+  name: Guest Bedroom Lights
+  room: Guest Bedroom
+#  type: 'action.devices.types.LIGHT'
+light.living_room_dimmer_01:
+  name: Couch Lamp
+  room: Living Room
+#  type: 'action.devices.types.LIGHT'
+light.mitsuri:
+  name: Mitsuri
+  room: Office
+#  type: 'action.devices.types.LIGHT'
+light.sakuya:
+  name: Sakuya
+  room: Gazebo
+#  type: 'action.devices.types.LIGHT'
+switch.master_bedroom_switch_01:
   name: Fireplace
   room: Master Bedroom
 #  type: 'action.devices.types.OUTLET'
@@ -50,11 +58,11 @@ script.control_garage_door:
   name: Garage Door
   room: Garage
 #  type: 'action.devices.types.SCENE'
-lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked:
+lock.front_entry_door_lock_01:
   name: Front Door
   room: Living Room
 #  type: 'action.devices.types.LOCK'
-lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2:
+lock.side_entry_door_lock_01:
   name: Side Door
-  room: Space
+  room: Side Entry
 #  type: 'action.devices.types.LOCK'

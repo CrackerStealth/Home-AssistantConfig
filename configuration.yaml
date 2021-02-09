@@ -168,6 +168,8 @@ zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret zwave_secure_key
 
+tag:
+
 alarm_control_panel: !include armoury/alarm_control_panel.yaml
 
 group: !include_dir_merge_named armoury/group
@@ -177,6 +179,7 @@ sensor: !include_dir_list armoury/sensor
 switch: !include_dir_list armoury/switch
 light: !include_dir_list armoury/light
 input_select: !include_dir_merge_named armoury/input_select
+input_boolean: !include_dir_merge_named armoury/input_boolean
 
 shell_command: !include armoury/shell_command.yaml
 automation: !include automations.yaml

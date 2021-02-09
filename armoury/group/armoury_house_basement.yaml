@@ -2,8 +2,8 @@ house_basement_common_room:
   name: Basement
   entities:
     - media_player.Armoury_Exercise_Room
-    - light.homeseer_hswd100_wall_dimmer_level_3
-house_basement_office:
-  name: Office
+    - light.basement_dimmer_01
+house_basement_guest_bedroom:
+  name: Guest Bedroom
   entities:
-    - light.homeseer_hswd100_wall_dimmer_level
+    - light.guest_bedroom_dimmer_01

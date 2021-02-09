@@ -2,12 +2,15 @@ house_main_floor_front_entry:
   name: Front Entryway
   entities:
     - sensor.front_door_sensor_human_readable
-    - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
-    - light.homeseer_hswd100_wall_dimmer_level_2
+    - lock.front_entry_door_lock_01
+    - light.front_entry_dimmer_01
 house_main_floor_living_room:
   name: Living Room
   entities:
-    - light.aeotec_zw099_smart_dimmer_6_level
+    - light.monica
+    - light.shera
+    - light.tamaki
+    - light.living_room_dimmer_01
     - light.Chair_Lamp
 house_main_floor_hallway:
   name: Hallway
@@ -18,13 +21,14 @@ house_main_floor_bedroom_01:
   name: Master Bedroom
   entities:
     - climate.master_bedroom_heat
-    - switch.Aeotec_ZW096_Smart_Switch_6_Switch
+    - switch.master_bedroom_switch_01
     - light.Bedside_Left
     - light.Bedside_Right
 house_main_floor_bedroom_02:
   name: Upstairs Office
   entities:
     - light.asuna
+    - light.mitsuri
 house_main_floor_bathroom:
   name: Bathroom
   entities:
@@ -40,12 +44,11 @@ house_main_floor_kitchen:
   entities:
     - media_player.Armoury_Kitchen
     - light.esdeath
-    - light.Kitchen_Cabinet
 house_main_floor_side_entry:
   name: Side Entryway
   entities:
     - sensor.side_door_sensor_human_readable
-    - lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+    - lock.side_entry_door_lock_01
 house_main_floor_laundry_room:
   name: Laundry Room
   entities:

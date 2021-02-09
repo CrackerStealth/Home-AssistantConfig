@@ -14,7 +14,7 @@ layout:
     - front_door, front_door_lock, side_door, side_door_lock, garage_door
     - rain_detector, main_clock (3x1)
     - house_temperature, master_bedroom_temperature, garage_temperature, hottub_temperature
-    - gazebo_light, basement_light, office_light, kitchen_light, living_room_light, master_bedroom_light
+    - gazebo_light, basement_light, guest_bedroom_light, kitchen_light, living_room_light, master_bedroom_light
 
 main_clock:
     widget_type: clock
@@ -55,7 +55,7 @@ hottub_temperature:
     title2: Temp.
     units: "&deg;C"
     precision: 0
-    entity: sensor.hottub_temperature
+    entity: sensor.hot_tub_temperature_01
 
 rain_detector:
     widget_type: binary_sensor
@@ -89,7 +89,7 @@ front_door_lock:
     title: Front Door
     icon_style_inactive: "color: green"
     icon_style_active: "color: red"
-    entity: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+    entity: lock.front_entry_door_lock_01
     state_text: 1
     state_map:
       "locked": Locked
@@ -113,7 +113,7 @@ side_door_lock:
     title: Side Door
     icon_style_inactive: "color: green"
     icon_style_active: "color: red"
-    entity: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+    entity: lock.side_entry_door_lock_01
     state_text: 1
     state_map:
       "locked": Locked
@@ -137,21 +137,21 @@ gazebo_light:
     title: Gazebo
     icon_on: mdi-lightbulb-on
     icon_off: mdi-lightbulb-outline
-    entity: light.gazebo_light
+    entity: light.sakuya
 
 basement_light:
     widget_type: light
     title: Basement
     icon_on: mdi-lightbulb-on
     icon_off: mdi-lightbulb-outline
-    entity: light.homeseer_hswd100_wall_dimmer_level_3
+    entity: light.basement_dimmer_01
 
-office_light:
+guest_bedroom_light:
     widget_type: light
-    title: Office
+    title: Guest Bedroom
     icon_on: mdi-lightbulb-on
     icon_off: mdi-lightbulb-outline
-    entity: light.homeseer_hswd100_wall_dimmer_level
+    entity: light.guest_bedroom_dimmer_01
 
 kitchen_light:
     widget_type: light

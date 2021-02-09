@@ -1,5 +1,0 @@
-name: hottub_temperature_service
-platform: ping
-host: !secret hottub_temperature_service_ip
-count: 3
-scan_interval: 180

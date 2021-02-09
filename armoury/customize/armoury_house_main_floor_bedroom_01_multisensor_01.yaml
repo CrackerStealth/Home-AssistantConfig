@@ -1,6 +1,0 @@
-sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature:
-  friendly_name: Temperature
-sensor.bedroom_01_multisensor_battery:
-  icon: mdi:battery
-binary_sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Sensor:
-  friendly_name: Master Bedroom Motion

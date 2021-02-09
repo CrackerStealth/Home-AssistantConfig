@@ -15,7 +15,7 @@ house_basement:
   name: House (Basement)
   entities:
     - group.house_basement_common_room
-    - group.house_basement_office
+    - group.house_basement_guest_bedroom
 house_security:
   name: House (Security)
   entities:
@@ -41,6 +41,7 @@ status:
   name: Status
   entities:
     - group.status_people
+    - group.status_decore
     - group.status_hosts
     - group.status_nas
     - group.status_pihole

@@ -1,5 +1,5 @@
 platform: group
 name: Living Room Lights
 entities:
-  - light.aeotec_zw099_smart_dimmer_6_level
+  - light.living_room_dimmer_01
   - light.chair_lamp

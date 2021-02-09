@@ -2,7 +2,7 @@
   alias: 'Alert: Hot Tub Temperature Low'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.hottub_temperature
+      entity_id: sensor.hot_tub_temperature_01
       below: 38
       for:
         minutes: 5
@@ -73,7 +73,7 @@
   alias: 'Alert: Front Door Unlocked'
   trigger:
     - platform: state
-      entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked
+      entity_id: lock.front_entry_door_lock_01
       from: locked
       to: unlocked
   action:
@@ -87,7 +87,7 @@
   alias: 'Alert: Side Door Unlocked'
   trigger:
     - platform: state
-      entity_id: lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2
+      entity_id: lock.side_entry_door_lock_01
       from: locked
       to: unlocked
   action:
@@ -101,7 +101,7 @@
   alias: 'Alert: Front Door Opened'
   trigger:
     - platform: state
-      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor_2
+      entity_id: binary_sensor.front_entry_door_sensor_01
       from: 'off'
       to: 'on'
   action:
@@ -115,7 +115,7 @@
   alias: 'Alert: Side Door Opened'
   trigger:
     - platform: state
-      entity_id: binary_sensor.aeotec_zw112_door_window_sensor_6_sensor
+      entity_id: binary_sensor.side_entry_door_sensor_01
       from: 'off'
       to: 'on'
   action:
@@ -129,7 +129,7 @@
   alias: 'Alert: High Heat In Master Bedroom'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.FIBARO_System_FGMS001ZW5_Motion_Sensor_Temperature
+      entity_id: sensor.master_bedroom_multisensor_01_temperature
       above: 26.5
   action:
     - service: notify.armoury_pushover
@@ -140,12 +140,12 @@
           priority: 1
     - service: switch.turn_off
       data:
-        entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+        entity_id: switch.master_bedroom_switch_01
 - id: alert_master_bedroom_fireplace_turned_on
   alias: 'Alert: Master Bedroom Fireplace Turned On'
   trigger:
     - platform: state
-      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      entity_id: switch.master_bedroom_switch_01
       from: 'off'
       to: 'on'
   action:
@@ -159,7 +159,7 @@
   alias: 'Alert: Master Bedroom Fireplace Turned Off'
   trigger:
     - platform: state
-      entity_id: switch.Aeotec_ZW096_Smart_Switch_6_Switch
+      entity_id: switch.master_bedroom_switch_01
       from: 'on'
       to: 'off'
   action:
@@ -259,7 +259,7 @@
   alias: 'Alert: Hot Tub Temeprature Service Offline'
   trigger:
     - platform: state
-      entity_id: binary_sensor.hottub_temperature_service
+      entity_id: binary_sensor.hot_tub_status
       from: 'on'
       to: 'off'
       for:
@@ -307,7 +307,7 @@
   alias: 'Alarm: Triggers When Set to Away'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      entity_id: binary_sensor.master_bedroom_multisensor_01_motion_sensor
       from: 'off'
       to: 'on'
   condition:
@@ -322,7 +322,7 @@
   alias: 'Alarm: Triggers When Set to Home'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      entity_id: binary_sensor.master_bedroom_multisensor_01_motion_sensor
       from: 'off'
       to: 'on'
   condition:
@@ -337,7 +337,7 @@
   alias: 'Alarm: Triggers When Set to Night'
   trigger:
     - platform: state
-      entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+      entity_id: binary_sensor.master_bedroom_multisensor_01_motion_sensor
       from: 'off'
       to: 'on'
   condition:
@@ -352,10 +352,10 @@
   alias: 'Alarm: Disarm When Keypad Used'
   trigger:
     - platform: state
-      entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type
+      entity_id: sensor.front_entry_door_lock_01_alarm_type
       to: '19'
     - platform: state
-      entity_id: sensor.assa_abloy_yale_push_button_deadbolt_yrd210_alarm_type_2
+      entity_id: sensor.side_entry_door_lock_01_alarm_type
       to: '19'
   action:
     - service: alarm_control_panel.alarm_disarm
@@ -374,40 +374,40 @@
         title: 'The Armoury: Home'
         data:
           priority: 1
-- id: react_turn_couch_light_on
-  alias: 'React: Turn Couch Light On'
+- id: react_front_entry_dimmer_01_double_tap_on
+  alias: 'React: Front Entry Dimmer 1 (Double Tap On)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        entity_id: zwave.front_entry_dimmer_01
         scene_id: 1
         scene_data: 3
   action:
     - service: light.turn_on
       data:
-        entity_id: light.aeotec_zw099_smart_dimmer_6_level
+        entity_id: light.living_room_dimmer_01
         brightness: 255
-- id: react_turn_couch_light_off
-  alias: 'React: Turn Couch Light Off'
+- id: react_front_entry_dimmer_01_double_tap_off
+  alias: 'React: Front Entry Dimmer 1 (Double Tap Off)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        entity_id: zwave.front_entry_dimmer_01
         scene_id: 2
         scene_data: 3
   action:
     - service: light.turn_off
       data:
-        entity_id: light.aeotec_zw099_smart_dimmer_6_level
-- id: react_turn_chair_light_on
-  alias: 'React: Turn Chair Light On'
+        entity_id: light.living_room_dimmer_01
+- id: react_front_entry_dimmer_01_triple_tap_on
+  alias: 'React: Front Entry Dimmer 1 (Triple Tap On)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        entity_id: zwave.front_entry_dimmer_01
         scene_id: 1
         scene_data: 4
   action:
@@ -415,73 +415,73 @@
       data:
         entity_id: light.chair_lamp
         brightness: 255
-- id: react_turn_chair_light_off
-  alias: 'React: Turn Chair Light Off'
+- id: react_front_entry_dimmer_01_triple_tap_off
+  alias: 'React: Front Entry Dimmer 1 (Triple Tap Off)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_2
+        entity_id: zwave.front_entry_dimmer_01
         scene_id: 2
         scene_data: 4
   action:
     - service: light.turn_off
       data:
         entity_id: light.chair_lamp
-- id: react_turn_basement_light_on
-  alias: 'React: Turn Basement Light On'
+- id: react_guest_bedroom_dimmer_01_double_tap_on
+  alias: 'React: Guest Bedroom Dimmer 1 (Double Tap On)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer
+        entity_id: zwave.guest_bedroom_dimmer_01
         scene_id: 1
         scene_data: 3
   action:
     - service: light.turn_on
       data:
-        entity_id: light.homeseer_hswd100_wall_dimmer_level_3
+        entity_id: light.basement_dimmer_01
         brightness: 255
-- id: react_turn_basement_light_off
-  alias: 'React: Turn Basement Light Off'
+- id: react_guest_bedroom_dimmer_01_double_tap_off
+  alias: 'React: Guest Bedroom Dimmer 1 (Double Tap Off)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer
+        entity_id: zwave.guest_bedroom_dimmer_01
         scene_id: 2
         scene_data: 3
   action:
     - service: light.turn_off
       data:
-        entity_id: light.homeseer_hswd100_wall_dimmer_level_3
-- id: react_turn_office_light_on
-  alias: 'React: Turn Office Light On'
+        entity_id: light.basement_dimmer_01
+- id: react_basement_dimmer_01_double_tap_on
+  alias: 'React: Basement Dimmer 1 (Double Tap On)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_3
+        entity_id: zwave.basement_dimmer_01
         scene_id: 1
-        scene_data: 3
+        scene_data: 7860
   action:
     - service: light.turn_on
       data:
-        entity_id: light.homeseer_hswd100_wall_dimmer_level
+        entity_id: light.guest_bedroom_dimmer_01
         brightness: 255
-- id: react_turn_office_light_off
-  alias: 'React: Turn Office Light Off'
+- id: react_basement_dimmer_01_double_tap_off
+  alias: 'React: Basement Dimmer 1 (Double Tap Off)'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        entity_id: zwave.homeseer_hswd100_wall_dimmer_3
+        entity_id: zwave.basement_dimmer_01
         scene_id: 2
-        scene_data: 3
+        scene_data: 7860
   action:
     - service: light.turn_off
       data:
-        entity_id: light.homeseer_hswd100_wall_dimmer_level
+        entity_id: light.guest_bedroom_dimmer_01
 - id: react_accent_lights_off
   alias: 'React: Accent Lights Turn Off'
   trigger:
@@ -492,6 +492,9 @@
     - service: light.turn_off
       data:
         entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
           - light.hibiki
           - light.esdeath
 - id: react_accent_lights_rainbow
@@ -504,8 +507,23 @@
     - service: light.turn_on
       data:
         entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
           - light.hibiki
           - light.esdeath
+    - service: wled.effect
+      data:
+        entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
+          - light.hibiki
+          - light.esdeath
+        effect: 'Rainbow'
+        palette: 'Default'
+        intensity: 128
+        speed: 128
 - id: react_accent_lights_halloween
   alias: 'React: Accent Lights Turn On (Halloween)'
   trigger:
@@ -516,8 +534,23 @@
     - service: light.turn_on
       data:
         entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
           - light.hibiki
           - light.esdeath
+    - service: wled.effect
+      data:
+        entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
+          - light.hibiki
+          - light.esdeath
+        effect: 'Halloween'
+        palette: 'Default'
+        intensity: 128
+        speed: 128
 - id: react_accent_lights_christmas
   alias: 'React: Accent Lights Turn On (Christmas)'
   trigger:
@@ -528,8 +561,23 @@
     - service: light.turn_on
       data:
         entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
           - light.hibiki
           - light.esdeath
+    - service: wled.effect
+      data:
+        entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
+          - light.hibiki
+          - light.esdeath
+        effect: 'Palette'
+        palette: 'Sherbet'
+        intensity: 128
+        speed: 128
 - id: react_accent_lights_northern_lights
   alias: 'React: Accent Lights Turn On (Northern Lights)'
   trigger:
@@ -540,8 +588,83 @@
     - service: light.turn_on
       data:
         entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
           - light.hibiki
           - light.esdeath
+    - service: wled.effect
+      data:
+        entity_id:
+          - light.monica
+          - light.shera
+          - light.tamaki
+          - light.hibiki
+          - light.esdeath
+        effect: 'Palette'
+        palette: 'Aurora'
+        intensity: 128
+        speed: 128
+- id: timed_decore_automated_on_dec
+  alias: 'Timed: Decore Automated On (December)'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '00:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.accent_lights_auto
+        state: 'on'
+      - condition: state
+        entity_id: input_select.accent_lights
+        state: 'Off'
+      - condition: template
+        value_template: '{{ (now().strftime("%-m") | int) == 12 }}'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.accent_lights
+      data:
+        option: 'Christmas'
+- id: timed_decore_automated_on_jan
+  alias: 'Timed: Decore Automated On (January)'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '00:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.accent_lights_auto
+        state: 'on'
+      - condition: state
+        entity_id: input_select.accent_lights
+        state: 'Off'
+      - condition: template
+        value_template: '{{ (now().strftime("%-m") | int) == 1 }}'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.accent_lights
+      data:
+        option: 'Northern Lights'
+- id: timed_decore_automated_off
+  alias: 'Timed: Decore Automated Off'
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.accent_lights_auto
+        state: 'on'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.accent_lights
+      data:
+        option: 'Off'
 - id: timed_nightly_backup
   alias: 'Timed: Nightly Backup'
   trigger:

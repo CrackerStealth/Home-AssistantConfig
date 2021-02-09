@@ -1,8 +1,0 @@
-lock.assa_abloy_yale_push_button_deadbolt_yrd210_locked_2:
-  friendly_name: Side Door Lock
-sensor.space_lock_battery:
-  icon: mdi:battery
-script.lock_side_door:
-  friendly_name: Lock Side Door
-script.unlock_side_door:
-  friendly_name: Unlock Side Door
